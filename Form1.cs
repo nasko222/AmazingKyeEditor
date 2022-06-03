@@ -46,6 +46,10 @@ namespace AmazingKyeEditor
         private Image[] timers = new Image[10];
         private PictureBox[] tileField = new PictureBox[600];
         private Dictionary<int, int> levelTileHashes = new Dictionary<int, int>();
+        private string LVLname;
+        private string LVLintro;
+        private string LVLhint;
+        private string LVLwin;
 
         private static Bitmap spritesheet;
 
@@ -182,6 +186,121 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+
+            //Add safety wall
+
+            //Corners
+            tileField[0].Image = LoadSpriteFromSheet(7, 6);
+            NOFobjectID[0] = 2;
+            NOFdata0[0] = 0;
+            NOFdata1[0] = 0;
+            NOFdata2[0] = 0;
+            NOFx1[0] = 7;
+            NOFx2[0] = 0;
+            NOFx3[0] = 0;
+            NOFx4[0] = 0;
+            NOFy1[0] = 6;
+
+            tileField[19].Image = LoadSpriteFromSheet(6, 6);
+            NOFobjectID[19] = 2;
+            NOFdata0[19] = 0;
+            NOFdata1[19] = 0;
+            NOFdata2[19] = 0;
+            NOFx1[19] = 6;
+            NOFx2[19] = 0;
+            NOFx3[19] = 0;
+            NOFx4[19] = 0;
+            NOFy1[19] = 6;
+
+            tileField[580].Image = LoadSpriteFromSheet(5, 6);
+            NOFobjectID[580] = 2;
+            NOFdata0[580] = 0;
+            NOFdata1[580] = 0;
+            NOFdata2[580] = 0;
+            NOFx1[580] = 5;
+            NOFx2[580] = 0;
+            NOFx3[580] = 0;
+            NOFx4[580] = 0;
+            NOFy1[580] = 6;
+
+            tileField[599].Image = LoadSpriteFromSheet(8, 6);
+            NOFobjectID[599] = 2;
+            NOFdata0[599] = 0;
+            NOFdata1[599] = 0;
+            NOFdata2[599] = 0;
+            NOFx1[599] = 8;
+            NOFx2[599] = 0;
+            NOFx3[599] = 0;
+            NOFx4[599] = 0;
+            NOFy1[599] = 6;
+
+
+
+            //Left wall
+            for (int k = 1; k < 19; k++)
+            {
+                tileField[k].Image = LoadSpriteFromSheet(3, 2);
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 3;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 2;
+            }
+
+
+
+            //Right wall
+            for (int k = 581; k < 599; k++)
+            {
+                tileField[k].Image = LoadSpriteFromSheet(1, 2);
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 1;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 2;
+            }
+
+
+
+            //Top Wall
+            for (int k = 20; k < 580; k+=20)
+            {
+                tileField[k].Image = LoadSpriteFromSheet(2, 3);
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 2;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 3;
+            }
+
+            //Top Wall
+            for (int k = 39; k < 580; k += 20)
+            {
+                tileField[k].Image = LoadSpriteFromSheet(2, 1);
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 2;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 1;
+            }
+
+
         }
 
         private void createLevelTile(int x, int y, int tileID)
