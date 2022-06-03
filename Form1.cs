@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AmazingKyeEditor
 {
@@ -50,6 +51,10 @@ namespace AmazingKyeEditor
         private string LVLintro;
         private string LVLhint;
         private string LVLwin;
+        private string LVLid;
+        private bool tutorialLevel;
+        private int levelID;
+        private int stars = 1;
 
         private static Bitmap spritesheet;
 
@@ -285,7 +290,7 @@ namespace AmazingKyeEditor
                 NOFy1[k] = 3;
             }
 
-            //Top Wall
+            //Bottom Wall
             for (int k = 39; k < 580; k += 20)
             {
                 tileField[k].Image = LoadSpriteFromSheet(2, 1);
@@ -324,15 +329,15 @@ namespace AmazingKyeEditor
             {
                 //Delete object
                 tileField[levelTileHashes[sender.GetHashCode()]].Image = null;
-                objectID = 0;
-                data0 = 0;
-                data1 = 0;
-                data2 = 0;
-                x1 = 0;
-                x2 = 0;
-                x3 = 0;
-                x4 = 0;
-                y1 = 0;
+                NOFobjectID[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFdata0[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFdata1[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFdata2[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFx1[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFx2[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFx3[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFx4[levelTileHashes[sender.GetHashCode()]] = 0;
+                NOFy1[levelTileHashes[sender.GetHashCode()]] = 0;
             }
             else if (e.Button == MouseButtons.Left)
             {
@@ -817,6 +822,7 @@ namespace AmazingKyeEditor
             y1 = 0;
         }
 
+        //Timers x1-x4 data is float
         private void timer0_Click(object sender, EventArgs e)
         {
             aSelected.Image = timers[0];
@@ -971,6 +977,115 @@ namespace AmazingKyeEditor
             y1 = wallY;
         }
 
+        private void saveLevelBTN_Click(object sender, EventArgs e)
+        {
+            LVLname = textBox4.Text;
+            LVLintro = textBox3.Text;
+            LVLhint = textBox1.Text;
+            LVLwin = textBox2.Text;
+            LVLid = textBox5.Text;
+
+            if (LVLname.Length < 1 || LVLintro.Length < 1 || LVLhint.Length < 1 || LVLwin.Length < 1) return;
+
+            if (LVLid.Length < 1 || LVLid.Length > 2) return;
+
+            levelID = int.Parse(LVLid);
+            if (levelID < 0) return;
+            if (levelID == 1) tutorialLevel = true;
+            else tutorialLevel = false;
+
+            if (levelID < 10) MyWriteFile("0" + levelID.ToString() + "-" + stars + "_" + LVLname.ToLower());
+            else MyWriteFile(levelID.ToString() + "-" + stars + "_" + LVLname.ToLower());
+
+        }
+
+        private void MyWriteFile(string fileName)
+        {
+            //Create empty file structure
+            byte[] data = new byte[10604];
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] = 0;
+            }
+
+
+            // Write Level Field
+            for (int objects = 0; objects < 600; objects++)
+            {
+                for (int j = 0; j < 16; j++)
+                {
+                    if (j % 16 == 4) data[j + 16 * objects] = NOFobjectID[objects];
+                    else if (j % 16 == 5) data[j + 16 * objects] = NOFdata0[objects];
+                    else if (j % 16 == 6) data[j + 16 * objects] = NOFdata1[objects];
+                    else if (j % 16 == 7) data[j + 16 * objects] = NOFdata2[objects];
+                    else if (j % 16 == 8) data[j + 16 * objects] = NOFx1[objects];
+                    else if (j % 16 == 9) data[j + 16 * objects] = NOFx2[objects];
+                    else if (j % 16 == 10) data[j + 16 * objects] = NOFx3[objects];
+                    else if (j % 16 == 11) data[j + 16 * objects] = NOFx4[objects];
+                    else if (j % 16 == 12) data[j + 16 * objects] = NOFy1[objects];
+                    else data[j + 16 * objects] = 0x00;
+                }
+            }
+
+            //Write Level Name
+
+            data[9600] = (byte)LVLname.Length;
+
+            for (int k = 0; k < data[9600]; k++)
+            {
+                data[9601 + k] = Convert.ToByte(LVLname.Substring(k, 1).ToCharArray()[0]);
+            }
+
+            //Write Level Intro Text
+
+            data[9851] = (byte)LVLintro.Length;
+
+            for (int k = 0; k < data[9851]; k++)
+            {
+                data[9852 + k] = Convert.ToByte(LVLintro.Substring(k, 1).ToCharArray()[0]);
+            }
+
+            //Write Level Hint
+
+            data[10102] = (byte)LVLhint.Length;
+
+            for (int k = 0; k < data[10102]; k++)
+            {
+                data[10103 + k] = Convert.ToByte(LVLhint.Substring(k, 1).ToCharArray()[0]);
+            }
+
+            //Write Level Win MSG
+
+            data[10353] = (byte)LVLwin.Length;
+
+            for (int k = 0; k < data[10353]; k++)
+            {
+                data[10354 + k] = Convert.ToByte(LVLwin.Substring(k, 1).ToCharArray()[0]);
+            }
+
+
+            File.WriteAllBytes(fileName + (tutorialLevel ? ".kyt" : ".kyl"), data);
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            stars = 1;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            stars = 2;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            stars = 3;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            stars = 4;
+        }
         
     }
 }

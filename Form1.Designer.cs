@@ -97,6 +97,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.saveLevelBTN = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -761,6 +769,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(341, 22);
             this.textBox1.TabIndex = 62;
+            this.textBox1.Text = "You must collect all diamonds to win!";
             // 
             // textBox2
             // 
@@ -768,6 +777,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(341, 22);
             this.textBox2.TabIndex = 63;
+            this.textBox2.Text = "Congratulations! You did it!";
             // 
             // textBox3
             // 
@@ -775,6 +785,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(172, 22);
             this.textBox3.TabIndex = 64;
+            this.textBox3.Text = "Welcome to my new level!";
             // 
             // textBox4
             // 
@@ -782,6 +793,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(172, 22);
             this.textBox4.TabIndex = 65;
+            this.textBox4.Text = "Level";
             // 
             // label10
             // 
@@ -823,12 +835,105 @@
             this.label13.Text = "Win MSG:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // saveLevelBTN
+            // 
+            this.saveLevelBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveLevelBTN.Location = new System.Drawing.Point(1395, 544);
+            this.saveLevelBTN.Name = "saveLevelBTN";
+            this.saveLevelBTN.Size = new System.Drawing.Size(183, 39);
+            this.saveLevelBTN.TabIndex = 70;
+            this.saveLevelBTN.Text = "Save Level";
+            this.saveLevelBTN.UseVisualStyleBackColor = true;
+            this.saveLevelBTN.Click += new System.EventHandler(this.saveLevelBTN_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(1504, 199);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(58, 22);
+            this.textBox5.TabIndex = 71;
+            this.textBox5.Text = "1";
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1427, 197);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(71, 22);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "Level ID:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1357, 225);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 22);
+            this.label15.TabIndex = 73;
+            this.label15.Text = "Stars:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(1405, 228);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(37, 21);
+            this.radioButton1.TabIndex = 74;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(1448, 228);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(37, 21);
+            this.radioButton2.TabIndex = 75;
+            this.radioButton2.Text = "2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(1491, 228);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(37, 21);
+            this.radioButton3.TabIndex = 76;
+            this.radioButton3.Text = "3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(1534, 228);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(37, 21);
+            this.radioButton4.TabIndex = 77;
+            this.radioButton4.Text = "4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1590, 590);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.saveLevelBTN);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -1028,6 +1133,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button saveLevelBTN;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
 
     }
 }
