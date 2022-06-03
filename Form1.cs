@@ -20,15 +20,15 @@ namespace AmazingKyeEditor
         private int x3;
         private int x4;
         private int y1;
-        private int[] NOFobjectID;
-        private int[] NOFdata0;
-        private int[] NOFdata1;
-        private int[] NOFdata2;
-        private int[] NOFx1;
-        private int[] NOFx2;
-        private int[] NOFx3;
-        private int[] NOFx4;
-        private int[] NOFy1;
+        private byte[] NOFobjectID = new byte[600];
+        private byte[] NOFdata0 = new byte[600];
+        private byte[] NOFdata1 = new byte[600];
+        private byte[] NOFdata2 = new byte[600];
+        private byte[] NOFx1 = new byte[600];
+        private byte[] NOFx2 = new byte[600];
+        private byte[] NOFx3 = new byte[600];
+        private byte[] NOFx4 = new byte[600];
+        private byte[] NOFy1 = new byte[600];
         private int wallX = 1;
         private int wallY = 1;
         private Image[] kye = new Image[1];
@@ -44,6 +44,7 @@ namespace AmazingKyeEditor
         private Image[] squaregenerators = new Image[4];
         private Image[] circlegenerators = new Image[4];
         private Image[] timers = new Image[10];
+        private PictureBox[] tileField = new PictureBox[600];
         private Dictionary<int, int> levelTileHashes = new Dictionary<int, int>();
 
         private static Bitmap spritesheet;
@@ -154,7 +155,6 @@ namespace AmazingKyeEditor
             //Render the rest
             pictureBox1.Image = spritesheet;
             levelBorder1.Image = LoadSpriteFromSheet(2, 2);
-            trashBack.Image = LoadSpriteFromSheet(4, 1);
             RenderWallTile();
 
             //Generate the level tile field
@@ -194,13 +194,41 @@ namespace AmazingKyeEditor
             tile.BackColor = Color.White;
             tile.Location = new Point(x, y);
             tile.BringToFront();
-            tile.Click += new System.EventHandler(this.OnLevelTileClick);
+            tile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnLevelTileClick);
+            tileField[tileID] = tile;
             this.Controls.Add(tile);
         }
 
-        private void OnLevelTileClick(object sender, EventArgs e)
+        private void OnLevelTileClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(levelTileHashes[sender.GetHashCode()].ToString());
+            if (e.Button == MouseButtons.Right)
+            {
+                //Delete object
+                tileField[levelTileHashes[sender.GetHashCode()]].Image = null;
+                objectID = 0;
+                data0 = 0;
+                data1 = 0;
+                data2 = 0;
+                x1 = 0;
+                x2 = 0;
+                x3 = 0;
+                x4 = 0;
+                y1 = 0;
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                //Put selected object at place
+                tileField[levelTileHashes[sender.GetHashCode()]].Image = aSelected.Image;
+                NOFobjectID[levelTileHashes[sender.GetHashCode()]] = (byte)objectID;
+                NOFdata0[levelTileHashes[sender.GetHashCode()]] = (byte)data0;
+                NOFdata1[levelTileHashes[sender.GetHashCode()]] = (byte)data1;
+                NOFdata2[levelTileHashes[sender.GetHashCode()]] = (byte)data2;
+                NOFx1[levelTileHashes[sender.GetHashCode()]] = (byte)x1;
+                NOFx2[levelTileHashes[sender.GetHashCode()]] = (byte)x2;
+                NOFx3[levelTileHashes[sender.GetHashCode()]] = (byte)x3;
+                NOFx4[levelTileHashes[sender.GetHashCode()]] = (byte)x4;
+                NOFy1[levelTileHashes[sender.GetHashCode()]] = (byte)y1;
+            }
         }
 
         private void wallTileR_Click(object sender, EventArgs e)
@@ -264,10 +292,10 @@ namespace AmazingKyeEditor
             y1 = 0;
         }
 
-        private void trashBack_Click(object sender, EventArgs e)
+        private void box1_Click(object sender, EventArgs e)
         {
-            aSelected.Image = LoadSpriteFromSheet(4, 1);
-            objectID = 0;
+            aSelected.Image = boxes[0];
+            objectID = 4;
             data0 = 0;
             data1 = 0;
             data2 = 0;
@@ -276,6 +304,552 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+        }
+
+        private void box2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = boxes[1];
+            objectID = 4;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void ghostbox1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = ghostboxes[0];
+            objectID = 6;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void ghostbox2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = ghostboxes[1];
+            objectID = 6;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squarep1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaremovebox[0];
+            objectID = 3;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squarep2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaremovebox[1];
+            objectID = 3;
+            data0 = 0;
+            data1 = 1;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squarep3_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaremovebox[2];
+            objectID = 3;
+            data0 = 0;
+            data1 = 2;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squarep4_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaremovebox[3];
+            objectID = 3;
+            data0 = 0;
+            data1 = 3;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlep1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlemovebox[0];
+            objectID = 3;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlep2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlemovebox[1];
+            objectID = 3;
+            data0 = 1;
+            data1 = 1;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlep3_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlemovebox[2];
+            objectID = 3;
+            data0 = 1;
+            data1 = 2;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlep4_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlemovebox[3];
+            objectID = 3;
+            data0 = 1;
+            data1 = 3;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void pusher1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = pushers[0];
+            objectID = 9;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void pusher2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = pushers[1];
+            objectID = 9;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void pusher3_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = pushers[2];
+            objectID = 9;
+            data0 = 2;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void pusher4_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = pushers[3];
+            objectID = 9;
+            data0 = 3;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squaregen1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaregenerators[0];
+            objectID = 7;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squaregen2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaregenerators[1];
+            objectID = 7;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squaregen3_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaregenerators[2];
+            objectID = 7;
+            data0 = 2;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void squaregen4_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = squaregenerators[3];
+            objectID = 7;
+            data0 = 3;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlegen1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlegenerators[0];
+            objectID = 7;
+            data0 = 0;
+            data1 = 1;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlegen2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlegenerators[1];
+            objectID = 7;
+            data0 = 1;
+            data1 = 1;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlegen3_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlegenerators[2];
+            objectID = 7;
+            data0 = 2;
+            data1 = 1;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void circlegen4_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = circlegenerators[3];
+            objectID = 7;
+            data0 = 3;
+            data1 = 1;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void destroyer_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = destroyers[0];
+            objectID = 5;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void magnetns_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = magnets[0];
+            objectID = 0x0B;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void magnetew_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = magnets[1];
+            objectID = 0x0B;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void rotateclock_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = rotators[0];
+            objectID = 0x0C;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void rotatecount_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = rotators[1];
+            objectID = 0x0C;
+            data0 = 1;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = 0;
+        }
+
+        private void timer0_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[0];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0xCD;
+            x2 = 0xCC;
+            x3 = 0xCC;
+            x4 = 0x3D;
+            y1 = 0;
+        }
+
+        private void timer1_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[1];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0xCD;
+            x2 = 0xCC;
+            x3 = 0x8C;
+            x4 = 0x3F;
+            y1 = 0;
+        }
+
+        private void timer2_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[2];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x66;
+            x2 = 0x66;
+            x3 = 0x06;
+            x4 = 0x40;
+            y1 = 0;
+        }
+
+        private void timer3_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[3];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x66;
+            x2 = 0x66;
+            x3 = 0x46;
+            x4 = 0x40;
+            y1 = 0;
+        }
+
+        private void timer4_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[4];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x33;
+            x2 = 0x33;
+            x3 = 0x83;
+            x4 = 0x40;
+            y1 = 0;
+        }
+
+        private void timer5_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[5];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x33;
+            x2 = 0x33;
+            x3 = 0xA3;
+            x4 = 0x40;
+            y1 = 0;
+        }
+
+        private void timer6_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[6];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x33;
+            x2 = 0x33;
+            x3 = 0xC3;
+            x4 = 0x40;
+            y1 = 0;
+        }
+
+        private void timer7_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[7];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x33;
+            x2 = 0x33;
+            x3 = 0xE3;
+            x4 = 0x40;
+            y1 = 0;
+        }
+
+        private void timer8_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[8];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x9A;
+            x2 = 0x99;
+            x3 = 0x01;
+            x4 = 0x41;
+            y1 = 0;
+        }
+
+        private void timer9_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = timers[9];
+            objectID = 0x0D;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = 0x9A;
+            x2 = 0x99;
+            x3 = 0x11;
+            x4 = 0x41;
+            y1 = 0;
+        }
+
+        private void wallTile_Click(object sender, EventArgs e)
+        {
+            aSelected.Image = wallTile.Image;
+            objectID = 2;
+            data0 = 0;
+            data1 = 0;
+            data2 = 0;
+            x1 = wallX;
+            x2 = 0;
+            x3 = 0;
+            x4 = 0;
+            y1 = wallY;
         }
 
         

@@ -87,9 +87,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.trashBack = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.aSelected = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -137,14 +144,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trashBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aSelected)).BeginInit();
             this.SuspendLayout();
             // 
             // kye1
             // 
             this.kye1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.kye1.Location = new System.Drawing.Point(1000, 45);
+            this.kye1.Location = new System.Drawing.Point(1013, 45);
             this.kye1.Name = "kye1";
             this.kye1.Size = new System.Drawing.Size(26, 25);
             this.kye1.TabIndex = 0;
@@ -164,7 +170,7 @@
             // diamond1
             // 
             this.diamond1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.diamond1.Location = new System.Drawing.Point(1038, 45);
+            this.diamond1.Location = new System.Drawing.Point(1061, 45);
             this.diamond1.Name = "diamond1";
             this.diamond1.Size = new System.Drawing.Size(26, 25);
             this.diamond1.TabIndex = 2;
@@ -189,6 +195,7 @@
             this.box1.Size = new System.Drawing.Size(26, 25);
             this.box1.TabIndex = 4;
             this.box1.TabStop = false;
+            this.box1.Click += new System.EventHandler(this.box1_Click);
             // 
             // box2
             // 
@@ -198,6 +205,7 @@
             this.box2.Size = new System.Drawing.Size(26, 25);
             this.box2.TabIndex = 5;
             this.box2.TabStop = false;
+            this.box2.Click += new System.EventHandler(this.box2_Click);
             // 
             // ghostbox1
             // 
@@ -207,6 +215,7 @@
             this.ghostbox1.Size = new System.Drawing.Size(26, 25);
             this.ghostbox1.TabIndex = 6;
             this.ghostbox1.TabStop = false;
+            this.ghostbox1.Click += new System.EventHandler(this.ghostbox1_Click);
             // 
             // ghostbox2
             // 
@@ -216,6 +225,7 @@
             this.ghostbox2.Size = new System.Drawing.Size(26, 25);
             this.ghostbox2.TabIndex = 7;
             this.ghostbox2.TabStop = false;
+            this.ghostbox2.Click += new System.EventHandler(this.ghostbox2_Click);
             // 
             // label3
             // 
@@ -235,6 +245,7 @@
             this.squarep4.Size = new System.Drawing.Size(26, 25);
             this.squarep4.TabIndex = 12;
             this.squarep4.TabStop = false;
+            this.squarep4.Click += new System.EventHandler(this.squarep4_Click);
             // 
             // squarep3
             // 
@@ -244,6 +255,7 @@
             this.squarep3.Size = new System.Drawing.Size(26, 25);
             this.squarep3.TabIndex = 11;
             this.squarep3.TabStop = false;
+            this.squarep3.Click += new System.EventHandler(this.squarep3_Click);
             // 
             // squarep2
             // 
@@ -253,6 +265,7 @@
             this.squarep2.Size = new System.Drawing.Size(26, 25);
             this.squarep2.TabIndex = 10;
             this.squarep2.TabStop = false;
+            this.squarep2.Click += new System.EventHandler(this.squarep2_Click);
             // 
             // squarep1
             // 
@@ -262,6 +275,7 @@
             this.squarep1.Size = new System.Drawing.Size(26, 25);
             this.squarep1.TabIndex = 9;
             this.squarep1.TabStop = false;
+            this.squarep1.Click += new System.EventHandler(this.squarep1_Click);
             // 
             // circlep4
             // 
@@ -271,6 +285,7 @@
             this.circlep4.Size = new System.Drawing.Size(26, 25);
             this.circlep4.TabIndex = 16;
             this.circlep4.TabStop = false;
+            this.circlep4.Click += new System.EventHandler(this.circlep4_Click);
             // 
             // circlep3
             // 
@@ -280,6 +295,7 @@
             this.circlep3.Size = new System.Drawing.Size(26, 25);
             this.circlep3.TabIndex = 15;
             this.circlep3.TabStop = false;
+            this.circlep3.Click += new System.EventHandler(this.circlep3_Click);
             // 
             // circlep2
             // 
@@ -289,6 +305,7 @@
             this.circlep2.Size = new System.Drawing.Size(26, 25);
             this.circlep2.TabIndex = 14;
             this.circlep2.TabStop = false;
+            this.circlep2.Click += new System.EventHandler(this.circlep2_Click);
             // 
             // circlep1
             // 
@@ -298,6 +315,7 @@
             this.circlep1.Size = new System.Drawing.Size(26, 25);
             this.circlep1.TabIndex = 13;
             this.circlep1.TabStop = false;
+            this.circlep1.Click += new System.EventHandler(this.circlep1_Click);
             // 
             // pusher4
             // 
@@ -307,6 +325,7 @@
             this.pusher4.Size = new System.Drawing.Size(26, 25);
             this.pusher4.TabIndex = 20;
             this.pusher4.TabStop = false;
+            this.pusher4.Click += new System.EventHandler(this.pusher4_Click);
             // 
             // pusher3
             // 
@@ -316,6 +335,7 @@
             this.pusher3.Size = new System.Drawing.Size(26, 25);
             this.pusher3.TabIndex = 19;
             this.pusher3.TabStop = false;
+            this.pusher3.Click += new System.EventHandler(this.pusher3_Click);
             // 
             // pusher2
             // 
@@ -325,6 +345,7 @@
             this.pusher2.Size = new System.Drawing.Size(26, 25);
             this.pusher2.TabIndex = 18;
             this.pusher2.TabStop = false;
+            this.pusher2.Click += new System.EventHandler(this.pusher2_Click);
             // 
             // pusher1
             // 
@@ -334,6 +355,7 @@
             this.pusher1.Size = new System.Drawing.Size(26, 25);
             this.pusher1.TabIndex = 17;
             this.pusher1.TabStop = false;
+            this.pusher1.Click += new System.EventHandler(this.pusher1_Click);
             // 
             // label4
             // 
@@ -353,6 +375,7 @@
             this.circlegen4.Size = new System.Drawing.Size(26, 25);
             this.circlegen4.TabIndex = 29;
             this.circlegen4.TabStop = false;
+            this.circlegen4.Click += new System.EventHandler(this.circlegen4_Click);
             // 
             // circlegen3
             // 
@@ -362,6 +385,7 @@
             this.circlegen3.Size = new System.Drawing.Size(26, 25);
             this.circlegen3.TabIndex = 28;
             this.circlegen3.TabStop = false;
+            this.circlegen3.Click += new System.EventHandler(this.circlegen3_Click);
             // 
             // circlegen2
             // 
@@ -371,6 +395,7 @@
             this.circlegen2.Size = new System.Drawing.Size(26, 25);
             this.circlegen2.TabIndex = 27;
             this.circlegen2.TabStop = false;
+            this.circlegen2.Click += new System.EventHandler(this.circlegen2_Click);
             // 
             // circlegen1
             // 
@@ -380,6 +405,7 @@
             this.circlegen1.Size = new System.Drawing.Size(26, 25);
             this.circlegen1.TabIndex = 26;
             this.circlegen1.TabStop = false;
+            this.circlegen1.Click += new System.EventHandler(this.circlegen1_Click);
             // 
             // squaregen4
             // 
@@ -389,6 +415,7 @@
             this.squaregen4.Size = new System.Drawing.Size(26, 25);
             this.squaregen4.TabIndex = 25;
             this.squaregen4.TabStop = false;
+            this.squaregen4.Click += new System.EventHandler(this.squaregen4_Click);
             // 
             // squaregen3
             // 
@@ -398,6 +425,7 @@
             this.squaregen3.Size = new System.Drawing.Size(26, 25);
             this.squaregen3.TabIndex = 24;
             this.squaregen3.TabStop = false;
+            this.squaregen3.Click += new System.EventHandler(this.squaregen3_Click);
             // 
             // squaregen2
             // 
@@ -407,6 +435,7 @@
             this.squaregen2.Size = new System.Drawing.Size(26, 25);
             this.squaregen2.TabIndex = 23;
             this.squaregen2.TabStop = false;
+            this.squaregen2.Click += new System.EventHandler(this.squaregen2_Click);
             // 
             // squaregen1
             // 
@@ -416,6 +445,7 @@
             this.squaregen1.Size = new System.Drawing.Size(26, 25);
             this.squaregen1.TabIndex = 22;
             this.squaregen1.TabStop = false;
+            this.squaregen1.Click += new System.EventHandler(this.squaregen1_Click);
             // 
             // label5
             // 
@@ -435,6 +465,7 @@
             this.timer3.Size = new System.Drawing.Size(26, 25);
             this.timer3.TabIndex = 34;
             this.timer3.TabStop = false;
+            this.timer3.Click += new System.EventHandler(this.timer3_Click);
             // 
             // timer2
             // 
@@ -444,6 +475,7 @@
             this.timer2.Size = new System.Drawing.Size(26, 25);
             this.timer2.TabIndex = 33;
             this.timer2.TabStop = false;
+            this.timer2.Click += new System.EventHandler(this.timer2_Click);
             // 
             // timer1
             // 
@@ -453,6 +485,7 @@
             this.timer1.Size = new System.Drawing.Size(26, 25);
             this.timer1.TabIndex = 32;
             this.timer1.TabStop = false;
+            this.timer1.Click += new System.EventHandler(this.timer1_Click);
             // 
             // timer0
             // 
@@ -462,6 +495,7 @@
             this.timer0.Size = new System.Drawing.Size(26, 25);
             this.timer0.TabIndex = 31;
             this.timer0.TabStop = false;
+            this.timer0.Click += new System.EventHandler(this.timer0_Click);
             // 
             // timer4
             // 
@@ -471,6 +505,7 @@
             this.timer4.Size = new System.Drawing.Size(26, 25);
             this.timer4.TabIndex = 35;
             this.timer4.TabStop = false;
+            this.timer4.Click += new System.EventHandler(this.timer4_Click);
             // 
             // timer9
             // 
@@ -480,6 +515,7 @@
             this.timer9.Size = new System.Drawing.Size(26, 25);
             this.timer9.TabIndex = 40;
             this.timer9.TabStop = false;
+            this.timer9.Click += new System.EventHandler(this.timer9_Click);
             // 
             // timer8
             // 
@@ -489,6 +525,7 @@
             this.timer8.Size = new System.Drawing.Size(26, 25);
             this.timer8.TabIndex = 39;
             this.timer8.TabStop = false;
+            this.timer8.Click += new System.EventHandler(this.timer8_Click);
             // 
             // timer7
             // 
@@ -498,6 +535,7 @@
             this.timer7.Size = new System.Drawing.Size(26, 25);
             this.timer7.TabIndex = 38;
             this.timer7.TabStop = false;
+            this.timer7.Click += new System.EventHandler(this.timer7_Click);
             // 
             // timer6
             // 
@@ -507,6 +545,7 @@
             this.timer6.Size = new System.Drawing.Size(26, 25);
             this.timer6.TabIndex = 37;
             this.timer6.TabStop = false;
+            this.timer6.Click += new System.EventHandler(this.timer6_Click);
             // 
             // timer5
             // 
@@ -516,6 +555,7 @@
             this.timer5.Size = new System.Drawing.Size(26, 25);
             this.timer5.TabIndex = 36;
             this.timer5.TabStop = false;
+            this.timer5.Click += new System.EventHandler(this.timer5_Click);
             // 
             // label6
             // 
@@ -535,6 +575,7 @@
             this.rotatecount.Size = new System.Drawing.Size(26, 25);
             this.rotatecount.TabIndex = 46;
             this.rotatecount.TabStop = false;
+            this.rotatecount.Click += new System.EventHandler(this.rotatecount_Click);
             // 
             // rotateclock
             // 
@@ -544,6 +585,7 @@
             this.rotateclock.Size = new System.Drawing.Size(26, 25);
             this.rotateclock.TabIndex = 45;
             this.rotateclock.TabStop = false;
+            this.rotateclock.Click += new System.EventHandler(this.rotateclock_Click);
             // 
             // magnetew
             // 
@@ -553,6 +595,7 @@
             this.magnetew.Size = new System.Drawing.Size(26, 25);
             this.magnetew.TabIndex = 44;
             this.magnetew.TabStop = false;
+            this.magnetew.Click += new System.EventHandler(this.magnetew_Click);
             // 
             // magnetns
             // 
@@ -562,6 +605,7 @@
             this.magnetns.Size = new System.Drawing.Size(26, 25);
             this.magnetns.TabIndex = 43;
             this.magnetns.TabStop = false;
+            this.magnetns.Click += new System.EventHandler(this.magnetns_Click);
             // 
             // destroyer
             // 
@@ -571,6 +615,7 @@
             this.destroyer.Size = new System.Drawing.Size(26, 25);
             this.destroyer.TabIndex = 42;
             this.destroyer.TabStop = false;
+            this.destroyer.Click += new System.EventHandler(this.destroyer_Click);
             // 
             // label7
             // 
@@ -590,6 +635,7 @@
             this.wallTile.Size = new System.Drawing.Size(26, 25);
             this.wallTile.TabIndex = 48;
             this.wallTile.TabStop = false;
+            this.wallTile.Click += new System.EventHandler(this.wallTile_Click);
             // 
             // wallTileL
             // 
@@ -689,16 +735,6 @@
             this.pictureBox4.TabIndex = 58;
             this.pictureBox4.TabStop = false;
             // 
-            // trashBack
-            // 
-            this.trashBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.trashBack.Location = new System.Drawing.Point(1076, 45);
-            this.trashBack.Name = "trashBack";
-            this.trashBack.Size = new System.Drawing.Size(26, 25);
-            this.trashBack.TabIndex = 59;
-            this.trashBack.TabStop = false;
-            this.trashBack.Click += new System.EventHandler(this.trashBack_Click);
-            // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -719,15 +755,90 @@
             this.aSelected.TabIndex = 61;
             this.aSelected.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1221, 143);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(341, 22);
+            this.textBox1.TabIndex = 62;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(1221, 171);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(341, 22);
+            this.textBox2.TabIndex = 63;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(1390, 115);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(172, 22);
+            this.textBox3.TabIndex = 64;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(1390, 87);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(172, 22);
+            this.textBox4.TabIndex = 65;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1313, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 22);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "Name:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1253, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 22);
+            this.label11.TabIndex = 67;
+            this.label11.Text = "Introducy Text:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1167, 141);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 22);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "Hint:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1132, 168);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 22);
+            this.label13.TabIndex = 69;
+            this.label13.Text = "Win MSG:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1590, 590);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.aSelected);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.trashBack);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.wallDown);
@@ -840,9 +951,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trashBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aSelected)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -907,9 +1018,16 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox trashBack;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox aSelected;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
 
     }
 }
