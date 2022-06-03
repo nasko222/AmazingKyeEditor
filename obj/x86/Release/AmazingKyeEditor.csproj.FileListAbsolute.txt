@@ -1,0 +1,7 @@
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\bin\Release\AmazingKyeEditor.exe
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\bin\Release\AmazingKyeEditor.pdb
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.Form1.resources
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.Properties.Resources.resources
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.csproj.GenerateResource.Cache
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.exe
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.pdb
