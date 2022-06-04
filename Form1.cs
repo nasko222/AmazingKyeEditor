@@ -70,6 +70,15 @@ namespace AmazingKyeEditor
             InitializeComponent();
         }
 
+        private string Between(string STR, string FirstString, string LastString)
+        {
+            string FinalString;
+            int Pos1 = STR.IndexOf(FirstString) + FirstString.Length;
+            int Pos2 = STR.IndexOf(LastString);
+            FinalString = STR.Substring(Pos1, Pos2 - Pos1);
+            return FinalString;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //Load spritesheet into memory
@@ -999,6 +1008,134 @@ namespace AmazingKyeEditor
 
         }
 
+        private void ReRenderLevel()
+        {
+
+            //Replace all objects with the ones loaded in memory
+            for (int i = 0; i < 600; i++)
+            {
+                //Clear the field first
+                tileField[i].Image = null;
+
+                switch (NOFobjectID[i])
+                {
+                    case 0: break;
+                    case 1: tileField[i].Image = kye[0]; break;
+                    case 2: tileField[i].Image = LoadSpriteFromSheet(NOFx1[i], NOFy1[i]); break;
+                    case 3:
+                        if (NOFdata0[i] == 0) tileField[i].Image = squaremovebox[NOFdata1[i]];
+                        else tileField[i].Image = circlemovebox[NOFdata1[i]];
+                        break;
+                    case 4: tileField[i].Image = boxes[NOFdata0[i]]; break;
+                    case 5: tileField[i].Image = destroyers[0]; break;
+                    case 6: tileField[i].Image = ghostboxes[NOFdata0[i]]; break;
+                    case 7:
+                        if (NOFdata1[i] == 0) tileField[i].Image = squaregenerators[NOFdata1[i]];
+                        else tileField[i].Image = circlegenerators[NOFdata1[i]];
+                        break;
+                    case 9: tileField[i].Image = pushers[NOFdata0[i]]; break;
+                    case 10: tileField[i].Image = diamond[0]; break;
+                    case 11: tileField[i].Image = magnets[NOFdata0[i]]; break;
+                    case 12: tileField[i].Image = rotators[NOFdata0[i]]; break;
+                    case 13:
+                        if (NOFx3[i] == 0xCC) tileField[i].Image = timers[0];
+                        if (NOFx3[i] == 0x8C) tileField[i].Image = timers[1];
+                        if (NOFx3[i] == 0x06) tileField[i].Image = timers[2];
+                        if (NOFx3[i] == 0x46) tileField[i].Image = timers[3];
+                        if (NOFx3[i] == 0x83) tileField[i].Image = timers[4];
+                        if (NOFx3[i] == 0xA3) tileField[i].Image = timers[5];
+                        if (NOFx3[i] == 0xC3) tileField[i].Image = timers[6];
+                        if (NOFx3[i] == 0xE3) tileField[i].Image = timers[7];
+                        if (NOFx3[i] == 0x01) tileField[i].Image = timers[8];
+                        if (NOFx3[i] == 0x11) tileField[i].Image = timers[9];
+                        break;
+                    default:
+                        MessageBox.Show("Couldn't load object with ID of: " + NOFobjectID[i]);
+                        break;
+                }
+            }
+        }
+
+        private void MyReadFile(string fileName)
+        {
+            //Read file structure
+            byte[] data = new byte[10604];
+            data = File.ReadAllBytes(fileName);
+
+            // Read Level Field
+            for (int objects = 0; objects < 600; objects++)
+            {
+                for (int j = 0; j < 16; j++)
+                {
+                    if (j % 16 == 4) NOFobjectID[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 5) NOFdata0[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 6) NOFdata1[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 7) NOFdata2[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 8) NOFx1[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 9) NOFx2[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 10) NOFx3[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 11) NOFx4[objects] = data[j + 16 * objects];
+                    else if (j % 16 == 12) NOFy1[objects] = data[j + 16 * objects];
+                    else data[j + 16 * objects] = 0x00;
+                }
+            }
+
+            //Read Level Name
+            LVLname = string.Empty;
+            LVLintro = string.Empty;
+            LVLhint = string.Empty;
+            LVLwin = string.Empty;
+
+            for (int k = 0; k < data[9600]; k++)
+            {
+                LVLname += Convert.ToChar(data[9601 + k]).ToString();
+            }
+
+            //Write Level Intro Text
+
+            for (int k = 0; k < data[9851]; k++)
+            {
+                LVLintro += Convert.ToChar(data[9852 + k]).ToString();
+            }
+
+            //Write Level Hint
+
+            for (int k = 0; k < data[10102]; k++)
+            {
+                LVLhint += Convert.ToChar(data[10103 + k]).ToString();
+            }
+
+            //Write Level Win MSG
+
+            for (int k = 0; k < data[10353]; k++)
+            {
+                LVLwin += Convert.ToChar(data[10354 + k]).ToString();
+            }
+
+            textBox4.Text = LVLname;
+            textBox3.Text = LVLintro;
+            textBox1.Text = LVLhint;
+            textBox2.Text = LVLwin;
+            textBox5.Text = LVLid;
+
+            //stars = int.Parse(Between(fileName, "-", "_"));
+
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+
+            switch (stars)
+            {
+                case 1: radioButton1.Checked = true; break;
+                case 2: radioButton2.Checked = true; break;
+                case 3: radioButton3.Checked = true; break;
+                case 4: radioButton4.Checked = true; break;
+            }
+
+            ReRenderLevel();
+        }
+
         private void MyWriteFile(string fileName)
         {
             //Create empty file structure
@@ -1085,6 +1222,16 @@ namespace AmazingKyeEditor
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             stars = 4;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.DefaultExt = "kyl";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string fileloc = openFileDialog1.FileName;
+                MyReadFile(fileloc);
+            }
         }
         
     }

@@ -12,3 +12,4 @@ C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKye
 C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Debug\AmazingKyeEditor.Form1.resources
 C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Debug\AmazingKyeEditor.Properties.Resources.resources
 C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Debug\AmazingKyeEditor.csproj.GenerateResource.Cache
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Debug\AmazingKyeEditor.csprojResolveAssemblyReference.cache
