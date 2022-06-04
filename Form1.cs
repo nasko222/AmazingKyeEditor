@@ -32,6 +32,7 @@ namespace AmazingKyeEditor
         private byte[] NOFy1 = new byte[600];
         private int wallX = 1;
         private int wallY = 1;
+        private List<PictureBox> wallTiles = new List<PictureBox>();
         private Image[] kye = new Image[1];
         private Image[] diamond = new Image[1];
         private Image[] destroyers = new Image[1];
@@ -47,6 +48,7 @@ namespace AmazingKyeEditor
         private Image[] timers = new Image[10];
         private PictureBox[] tileField = new PictureBox[600];
         private Dictionary<int, int> levelTileHashes = new Dictionary<int, int>();
+        private Dictionary<int, int> wallHashes = new Dictionary<int, int>();
         private string LVLname;
         private string LVLintro;
         private string LVLhint;
@@ -170,10 +172,57 @@ namespace AmazingKyeEditor
             timer8.Image = timers[8];
             timer9.Image = timers[9];
 
-            //Render the rest
-            pictureBox1.Image = spritesheet;
-            levelBorder1.Image = LoadSpriteFromSheet(2, 2);
-            RenderWallTile();
+            //Walls
+            wallTiles.Add(wallTile1);
+            wallTiles.Add(wallTile2);
+            wallTiles.Add(wallTile3);
+            wallTiles.Add(wallTile4);
+            wallTiles.Add(wallTile5);
+            wallTiles.Add(wallTile6);
+            wallTiles.Add(wallTile7);
+            wallTiles.Add(wallTile8);
+            wallTiles.Add(wallTile9);
+            wallTiles.Add(wallTile10);
+            wallTiles.Add(wallTile11);
+            wallTiles.Add(wallTile12);
+            wallTiles.Add(wallTile13);
+            wallTiles.Add(wallTile14);
+            wallTiles.Add(wallTile15);
+            wallTiles.Add(wallTile16);
+            wallTiles.Add(wallTile17);
+            wallTiles.Add(wallTile18);
+            wallTiles.Add(wallTile19);
+            wallTiles.Add(wallTile20);
+            wallTiles.Add(wallTile21);
+            wallTiles.Add(wallTile22);
+            wallTiles.Add(wallTile23);
+            wallTiles.Add(wallTile24);
+            wallTiles.Add(wallTile25);
+            wallTiles.Add(wallTile26);
+            wallTiles.Add(wallTile27);
+            wallTiles.Add(wallTile28);
+            wallTiles.Add(wallTile29);
+            wallTiles.Add(wallTile30);
+            wallTiles.Add(wallTile31);
+            wallTiles.Add(wallTile32);
+            wallTiles.Add(wallTile33);
+            wallTiles.Add(wallTile34);
+            wallTiles.Add(wallTile35);
+            wallTiles.Add(wallTile36);
+            wallTiles.Add(wallTile41);
+            wallTiles.Add(wallTile42);
+            wallTiles.Add(wallTile43);
+            wallTiles.Add(wallTile44);
+            wallTiles.Add(wallTile45);
+
+            //Pre-Generate wall tiles
+            for (int w = 0; w < wallTiles.Count; w++)
+            {
+                if (wallTiles[w].Tag.ToString().Length == 3) wallTiles[w].Image = LoadSpriteFromSheet(int.Parse(wallTiles[w].Tag.ToString().Substring(0, 1)), int.Parse(wallTiles[w].Tag.ToString().Substring(2, 1)));
+                if (wallTiles[w].Tag.ToString().Length == 4) wallTiles[w].Image = LoadSpriteFromSheet(int.Parse(wallTiles[w].Tag.ToString().Substring(0, 2)), int.Parse(wallTiles[w].Tag.ToString().Substring(3, 1)));
+                wallTiles[w].Click += new System.EventHandler(this.wallTile_Click);
+                wallHashes.Add(wallTiles[w].GetHashCode(), w);
+            }
 
             //Generate the level tile field
             int tiles = 0;
@@ -315,6 +364,8 @@ namespace AmazingKyeEditor
             }
 
 
+
+
         }
 
         private void createLevelTile(int x, int y, int tileID)
@@ -322,7 +373,7 @@ namespace AmazingKyeEditor
             // Creates one level tile and remembers it's hash value so it can be identified
             PictureBox tile = new PictureBox();
             tile.Name = "levelTile" + tileID;
-            levelTileHashes.Add(tile.GetHashCode(), tileID);
+            wallHashes.Add(tile.GetHashCode(), tileID);
             tile.Size = new Size(20, 20);
             tile.BackColor = Color.White;
             tile.Location = new Point(x, y);
@@ -334,67 +385,48 @@ namespace AmazingKyeEditor
 
         private void OnLevelTileClick(object sender, MouseEventArgs e)
         {
+            
             if (e.Button == MouseButtons.Right)
             {
                 //Delete object
-                tileField[levelTileHashes[sender.GetHashCode()]].Image = null;
-                NOFobjectID[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFdata0[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFdata1[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFdata2[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFx1[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFx2[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFx3[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFx4[levelTileHashes[sender.GetHashCode()]] = 0;
-                NOFy1[levelTileHashes[sender.GetHashCode()]] = 0;
+                tileField[wallHashes[sender.GetHashCode()]].Image = null;
+                NOFobjectID[wallHashes[sender.GetHashCode()]] = 0;
+                NOFdata0[wallHashes[sender.GetHashCode()]] = 0;
+                NOFdata1[wallHashes[sender.GetHashCode()]] = 0;
+                NOFdata2[wallHashes[sender.GetHashCode()]] = 0;
+                NOFx1[wallHashes[sender.GetHashCode()]] = 0;
+                NOFx2[wallHashes[sender.GetHashCode()]] = 0;
+                NOFx3[wallHashes[sender.GetHashCode()]] = 0;
+                NOFx4[wallHashes[sender.GetHashCode()]] = 0;
+                NOFy1[wallHashes[sender.GetHashCode()]] = 0;
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                aSelected.Image = tileField[wallHashes[sender.GetHashCode()]].Image;
+                objectID = NOFobjectID[wallHashes[sender.GetHashCode()]];
+                data0 = NOFdata0[wallHashes[sender.GetHashCode()]];
+                data1 = NOFdata1[wallHashes[sender.GetHashCode()]];
+                data2 = NOFdata2[wallHashes[sender.GetHashCode()]];
+                x1 = NOFx1[wallHashes[sender.GetHashCode()]];
+                x2 = NOFx2[wallHashes[sender.GetHashCode()]];
+                x3 = NOFx3[wallHashes[sender.GetHashCode()]];
+                x4 = NOFx4[wallHashes[sender.GetHashCode()]];
+                y1 = NOFy1[wallHashes[sender.GetHashCode()]];
             }
             else if (e.Button == MouseButtons.Left)
             {
                 //Put selected object at place
-                tileField[levelTileHashes[sender.GetHashCode()]].Image = aSelected.Image;
-                NOFobjectID[levelTileHashes[sender.GetHashCode()]] = (byte)objectID;
-                NOFdata0[levelTileHashes[sender.GetHashCode()]] = (byte)data0;
-                NOFdata1[levelTileHashes[sender.GetHashCode()]] = (byte)data1;
-                NOFdata2[levelTileHashes[sender.GetHashCode()]] = (byte)data2;
-                NOFx1[levelTileHashes[sender.GetHashCode()]] = (byte)x1;
-                NOFx2[levelTileHashes[sender.GetHashCode()]] = (byte)x2;
-                NOFx3[levelTileHashes[sender.GetHashCode()]] = (byte)x3;
-                NOFx4[levelTileHashes[sender.GetHashCode()]] = (byte)x4;
-                NOFy1[levelTileHashes[sender.GetHashCode()]] = (byte)y1;
+                tileField[wallHashes[sender.GetHashCode()]].Image = aSelected.Image;
+                NOFobjectID[wallHashes[sender.GetHashCode()]] = (byte)objectID;
+                NOFdata0[wallHashes[sender.GetHashCode()]] = (byte)data0;
+                NOFdata1[wallHashes[sender.GetHashCode()]] = (byte)data1;
+                NOFdata2[wallHashes[sender.GetHashCode()]] = (byte)data2;
+                NOFx1[wallHashes[sender.GetHashCode()]] = (byte)x1;
+                NOFx2[wallHashes[sender.GetHashCode()]] = (byte)x2;
+                NOFx3[wallHashes[sender.GetHashCode()]] = (byte)x3;
+                NOFx4[wallHashes[sender.GetHashCode()]] = (byte)x4;
+                NOFy1[wallHashes[sender.GetHashCode()]] = (byte)y1;
             }
-        }
-
-        private void wallTileR_Click(object sender, EventArgs e)
-        {
-            if (wallX > 13) return;
-            wallX++;
-            RenderWallTile();
-        }
-
-        private void wallTileL_Click(object sender, EventArgs e)
-        {
-            if (wallX < 2) return;
-            wallX--;
-            RenderWallTile();
-        }
-
-        private void wallUp_Click(object sender, EventArgs e)
-        {
-            if (wallY < 2) return;
-            wallY--;
-            RenderWallTile();
-        }
-
-        private void wallDown_Click(object sender, EventArgs e)
-        {
-            if (wallY > 6) return;
-            wallY++;
-            RenderWallTile();
-        }
-
-        private void RenderWallTile()
-        {
-            wallTile.Image = LoadSpriteFromSheet(wallX, wallY);
         }
 
         private void kye1_Click(object sender, EventArgs e)
@@ -972,9 +1004,9 @@ namespace AmazingKyeEditor
             y1 = 0;
         }
 
-        private void wallTile_Click(object sender, EventArgs e)
+        private void LoadWall()
         {
-            aSelected.Image = wallTile.Image;
+            aSelected.Image = LoadSpriteFromSheet(wallX, wallY);
             objectID = 2;
             data0 = 0;
             data1 = 0;
@@ -984,6 +1016,21 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = wallY;
+        }
+
+        private void wallTile_Click(object sender, EventArgs e)
+        {
+            if (wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Length == 3)
+            {
+                wallX = int.Parse(wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Substring(0, 1));
+                wallY = int.Parse(wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Substring(2, 1));
+            }
+            else if (wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Length == 4)
+            {
+                wallX = int.Parse(wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Substring(0, 2));
+                wallY = int.Parse(wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Substring(3, 1));
+            }
+            LoadWall();
         }
 
         private void saveLevelBTN_Click(object sender, EventArgs e)
@@ -1091,39 +1138,37 @@ namespace AmazingKyeEditor
                 LVLname += Convert.ToChar(data[9601 + k]).ToString();
             }
 
-            //Write Level Intro Text
+            //Read Level Intro Text
 
             for (int k = 0; k < data[9851]; k++)
             {
                 LVLintro += Convert.ToChar(data[9852 + k]).ToString();
             }
 
-            //Write Level Hint
+            //Read Level Hint
 
             for (int k = 0; k < data[10102]; k++)
             {
                 LVLhint += Convert.ToChar(data[10103 + k]).ToString();
             }
 
-            //Write Level Win MSG
+            //Read Level Win MSG
 
             for (int k = 0; k < data[10353]; k++)
             {
                 LVLwin += Convert.ToChar(data[10354 + k]).ToString();
             }
 
+            //Put Data
             textBox4.Text = LVLname;
             textBox3.Text = LVLintro;
             textBox1.Text = LVLhint;
             textBox2.Text = LVLwin;
-            textBox5.Text = LVLid;
 
-            //stars = int.Parse(Between(fileName, "-", "_"));
-
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
+            //Read level id and stars from file name.
+            string[] uFileName = fileName.Split('\\');
+            textBox5.Text = int.Parse(uFileName[uFileName.Length - 1].Substring(0, 2)).ToString();
+            stars = int.Parse(uFileName[uFileName.Length - 1].Substring(3, 1));
 
             switch (stars)
             {
@@ -1132,6 +1177,8 @@ namespace AmazingKyeEditor
                 case 3: radioButton3.Checked = true; break;
                 case 4: radioButton4.Checked = true; break;
             }
+
+            checkBox1.Checked = fileName.Substring(fileName.Length - 1, 1) == "t";
 
             ReRenderLevel();
         }
@@ -1201,7 +1248,7 @@ namespace AmazingKyeEditor
             }
 
 
-            File.WriteAllBytes(fileName + (tutorialLevel ? ".kyt" : ".kyl"), data);
+            File.WriteAllBytes(fileName + (tutorialLevel || checkBox1.Checked ? ".kyt" : ".kyl"), data);
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -1232,6 +1279,154 @@ namespace AmazingKyeEditor
                 string fileloc = openFileDialog1.FileName;
                 MyReadFile(fileloc);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 600; i++)
+            {
+                NOFobjectID[i] = 0;
+                NOFdata0[i] = 0;
+                NOFdata1[i] = 0;
+                NOFdata2[i] = 0;
+                NOFx1[i] = 0;
+                NOFx2[i] = 0;
+                NOFx3[i] = 0;
+                NOFx4[i] = 0;
+                NOFy1[i] = 0;
+            }
+            ReAddSafety();
+            ReRenderLevel();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 600; i++)
+            {
+                NOFobjectID[i] = 2;
+                NOFdata0[i] = 0;
+                NOFdata1[i] = 0;
+                NOFdata2[i] = 0;
+                NOFx1[i] = 2;
+                NOFx2[i] = 0;
+                NOFx3[i] = 0;
+                NOFx4[i] = 0;
+                NOFy1[i] = 2;
+            }
+            ReRenderLevel();
+        }
+
+        private void ReAddSafety()
+        {
+            //Re-Add safety wall
+
+            //Corners
+            NOFobjectID[0] = 2;
+            NOFdata0[0] = 0;
+            NOFdata1[0] = 0;
+            NOFdata2[0] = 0;
+            NOFx1[0] = 7;
+            NOFx2[0] = 0;
+            NOFx3[0] = 0;
+            NOFx4[0] = 0;
+            NOFy1[0] = 6;
+
+            NOFobjectID[19] = 2;
+            NOFdata0[19] = 0;
+            NOFdata1[19] = 0;
+            NOFdata2[19] = 0;
+            NOFx1[19] = 6;
+            NOFx2[19] = 0;
+            NOFx3[19] = 0;
+            NOFx4[19] = 0;
+            NOFy1[19] = 6;
+
+            NOFobjectID[580] = 2;
+            NOFdata0[580] = 0;
+            NOFdata1[580] = 0;
+            NOFdata2[580] = 0;
+            NOFx1[580] = 5;
+            NOFx2[580] = 0;
+            NOFx3[580] = 0;
+            NOFx4[580] = 0;
+            NOFy1[580] = 6;
+
+            NOFobjectID[599] = 2;
+            NOFdata0[599] = 0;
+            NOFdata1[599] = 0;
+            NOFdata2[599] = 0;
+            NOFx1[599] = 8;
+            NOFx2[599] = 0;
+            NOFx3[599] = 0;
+            NOFx4[599] = 0;
+            NOFy1[599] = 6;
+
+
+
+            //Left wall
+            for (int k = 1; k < 19; k++)
+            {
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 3;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 2;
+            }
+
+
+
+            //Right wall
+            for (int k = 581; k < 599; k++)
+            {
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 1;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 2;
+            }
+
+
+
+            //Top Wall
+            for (int k = 20; k < 580; k += 20)
+            {
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 2;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 3;
+            }
+
+            //Bottom Wall
+            for (int k = 39; k < 580; k += 20)
+            {
+                NOFobjectID[k] = 2;
+                NOFdata0[k] = 0;
+                NOFdata1[k] = 0;
+                NOFdata2[k] = 0;
+                NOFx1[k] = 2;
+                NOFx2[k] = 0;
+                NOFx3[k] = 0;
+                NOFx4[k] = 0;
+                NOFy1[k] = 1;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Amazing Kye Editor by nasko222, version v1.02");
         }
         
     }

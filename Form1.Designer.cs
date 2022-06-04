@@ -76,13 +76,7 @@
             this.magnetns = new System.Windows.Forms.PictureBox();
             this.destroyer = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.wallTile = new System.Windows.Forms.PictureBox();
-            this.wallTileL = new System.Windows.Forms.Button();
-            this.wallTileR = new System.Windows.Forms.Button();
-            this.wallUp = new System.Windows.Forms.Button();
-            this.wallDown = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.wallTile1 = new System.Windows.Forms.PictureBox();
             this.levelBorder1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -107,6 +101,51 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.wallTile2 = new System.Windows.Forms.PictureBox();
+            this.wallTile3 = new System.Windows.Forms.PictureBox();
+            this.wallTile6 = new System.Windows.Forms.PictureBox();
+            this.wallTile5 = new System.Windows.Forms.PictureBox();
+            this.wallTile4 = new System.Windows.Forms.PictureBox();
+            this.wallTile9 = new System.Windows.Forms.PictureBox();
+            this.wallTile8 = new System.Windows.Forms.PictureBox();
+            this.wallTile7 = new System.Windows.Forms.PictureBox();
+            this.wallTile10 = new System.Windows.Forms.PictureBox();
+            this.wallTile11 = new System.Windows.Forms.PictureBox();
+            this.wallTile12 = new System.Windows.Forms.PictureBox();
+            this.wallTile13 = new System.Windows.Forms.PictureBox();
+            this.wallTile14 = new System.Windows.Forms.PictureBox();
+            this.wallTile15 = new System.Windows.Forms.PictureBox();
+            this.wallTile16 = new System.Windows.Forms.PictureBox();
+            this.wallTile17 = new System.Windows.Forms.PictureBox();
+            this.wallTile19 = new System.Windows.Forms.PictureBox();
+            this.wallTile18 = new System.Windows.Forms.PictureBox();
+            this.wallTile20 = new System.Windows.Forms.PictureBox();
+            this.wallTile24 = new System.Windows.Forms.PictureBox();
+            this.wallTile22 = new System.Windows.Forms.PictureBox();
+            this.wallTile23 = new System.Windows.Forms.PictureBox();
+            this.wallTile21 = new System.Windows.Forms.PictureBox();
+            this.wallTile25 = new System.Windows.Forms.PictureBox();
+            this.wallTile26 = new System.Windows.Forms.PictureBox();
+            this.wallTile27 = new System.Windows.Forms.PictureBox();
+            this.wallTile29 = new System.Windows.Forms.PictureBox();
+            this.wallTile30 = new System.Windows.Forms.PictureBox();
+            this.wallTile28 = new System.Windows.Forms.PictureBox();
+            this.wallTile33 = new System.Windows.Forms.PictureBox();
+            this.wallTile32 = new System.Windows.Forms.PictureBox();
+            this.wallTile31 = new System.Windows.Forms.PictureBox();
+            this.wallTile36 = new System.Windows.Forms.PictureBox();
+            this.wallTile35 = new System.Windows.Forms.PictureBox();
+            this.wallTile34 = new System.Windows.Forms.PictureBox();
+            this.wallTile41 = new System.Windows.Forms.PictureBox();
+            this.wallTile42 = new System.Windows.Forms.PictureBox();
+            this.wallTile43 = new System.Windows.Forms.PictureBox();
+            this.wallTile44 = new System.Windows.Forms.PictureBox();
+            this.wallTile45 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -148,13 +187,52 @@
             ((System.ComponentModel.ISupportInitialize)(this.magnetew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magnetns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.destroyer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.levelBorder1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aSelected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile42)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile43)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile45)).BeginInit();
             this.SuspendLayout();
             // 
             // kye1
@@ -630,80 +708,22 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1247, 196);
+            this.label7.Location = new System.Drawing.Point(1181, 295);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 33);
+            this.label7.Size = new System.Drawing.Size(379, 33);
             this.label7.TabIndex = 47;
             this.label7.Text = "Walls";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // wallTile
+            // wallTile1
             // 
-            this.wallTile.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile.Location = new System.Drawing.Point(1276, 269);
-            this.wallTile.Name = "wallTile";
-            this.wallTile.Size = new System.Drawing.Size(26, 25);
-            this.wallTile.TabIndex = 48;
-            this.wallTile.TabStop = false;
-            this.wallTile.Click += new System.EventHandler(this.wallTile_Click);
-            // 
-            // wallTileL
-            // 
-            this.wallTileL.Location = new System.Drawing.Point(1245, 269);
-            this.wallTileL.Name = "wallTileL";
-            this.wallTileL.Size = new System.Drawing.Size(25, 25);
-            this.wallTileL.TabIndex = 49;
-            this.wallTileL.Text = "<";
-            this.wallTileL.UseVisualStyleBackColor = true;
-            this.wallTileL.Click += new System.EventHandler(this.wallTileL_Click);
-            // 
-            // wallTileR
-            // 
-            this.wallTileR.Location = new System.Drawing.Point(1308, 269);
-            this.wallTileR.Name = "wallTileR";
-            this.wallTileR.Size = new System.Drawing.Size(25, 25);
-            this.wallTileR.TabIndex = 50;
-            this.wallTileR.Text = ">";
-            this.wallTileR.UseVisualStyleBackColor = true;
-            this.wallTileR.Click += new System.EventHandler(this.wallTileR_Click);
-            // 
-            // wallUp
-            // 
-            this.wallUp.Location = new System.Drawing.Point(1277, 238);
-            this.wallUp.Name = "wallUp";
-            this.wallUp.Size = new System.Drawing.Size(25, 25);
-            this.wallUp.TabIndex = 51;
-            this.wallUp.Text = "^";
-            this.wallUp.UseVisualStyleBackColor = true;
-            this.wallUp.Click += new System.EventHandler(this.wallUp_Click);
-            // 
-            // wallDown
-            // 
-            this.wallDown.Location = new System.Drawing.Point(1277, 300);
-            this.wallDown.Name = "wallDown";
-            this.wallDown.Size = new System.Drawing.Size(25, 25);
-            this.wallDown.TabIndex = 52;
-            this.wallDown.Text = "v";
-            this.wallDown.UseVisualStyleBackColor = true;
-            this.wallDown.Click += new System.EventHandler(this.wallDown_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(1180, 339);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(398, 199);
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1384, 289);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 33);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "Spritesheet";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.wallTile1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile1.Location = new System.Drawing.Point(1181, 349);
+            this.wallTile1.Name = "wallTile1";
+            this.wallTile1.Size = new System.Drawing.Size(26, 25);
+            this.wallTile1.TabIndex = 48;
+            this.wallTile1.TabStop = false;
+            this.wallTile1.Tag = "1;1";
             // 
             // levelBorder1
             // 
@@ -748,7 +768,7 @@
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1384, 20);
+            this.label9.Location = new System.Drawing.Point(1379, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 33);
             this.label9.TabIndex = 60;
@@ -758,9 +778,9 @@
             // aSelected
             // 
             this.aSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aSelected.Location = new System.Drawing.Point(1510, 12);
+            this.aSelected.Location = new System.Drawing.Point(1504, 6);
             this.aSelected.Name = "aSelected";
-            this.aSelected.Size = new System.Drawing.Size(52, 50);
+            this.aSelected.Size = new System.Drawing.Size(75, 75);
             this.aSelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.aSelected.TabIndex = 61;
             this.aSelected.TabStop = false;
@@ -851,6 +871,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(1504, 199);
+            this.textBox5.MaxLength = 2;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(58, 22);
             this.textBox5.TabIndex = 71;
@@ -869,9 +890,9 @@
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1357, 225);
+            this.label15.Location = new System.Drawing.Point(1351, 225);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 22);
+            this.label15.Size = new System.Drawing.Size(57, 22);
             this.label15.TabIndex = 73;
             this.label15.Text = "Stars:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -937,12 +958,512 @@
             // 
             this.openFileDialog1.FileName = "kyl/kyt files";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(1221, 229);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(124, 21);
+            this.checkBox1.TabIndex = 79;
+            this.checkBox1.Text = "Tutorial Level?";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // wallTile2
+            // 
+            this.wallTile2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile2.Location = new System.Drawing.Point(1213, 349);
+            this.wallTile2.Name = "wallTile2";
+            this.wallTile2.Size = new System.Drawing.Size(26, 25);
+            this.wallTile2.TabIndex = 80;
+            this.wallTile2.TabStop = false;
+            this.wallTile2.Tag = "2;1";
+            // 
+            // wallTile3
+            // 
+            this.wallTile3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile3.Location = new System.Drawing.Point(1245, 349);
+            this.wallTile3.Name = "wallTile3";
+            this.wallTile3.Size = new System.Drawing.Size(26, 25);
+            this.wallTile3.TabIndex = 81;
+            this.wallTile3.TabStop = false;
+            this.wallTile3.Tag = "3;1";
+            // 
+            // wallTile6
+            // 
+            this.wallTile6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile6.Location = new System.Drawing.Point(1245, 380);
+            this.wallTile6.Name = "wallTile6";
+            this.wallTile6.Size = new System.Drawing.Size(26, 25);
+            this.wallTile6.TabIndex = 84;
+            this.wallTile6.TabStop = false;
+            this.wallTile6.Tag = "3;2";
+            // 
+            // wallTile5
+            // 
+            this.wallTile5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile5.Location = new System.Drawing.Point(1213, 380);
+            this.wallTile5.Name = "wallTile5";
+            this.wallTile5.Size = new System.Drawing.Size(26, 25);
+            this.wallTile5.TabIndex = 83;
+            this.wallTile5.TabStop = false;
+            this.wallTile5.Tag = "2;2";
+            // 
+            // wallTile4
+            // 
+            this.wallTile4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile4.Location = new System.Drawing.Point(1181, 380);
+            this.wallTile4.Name = "wallTile4";
+            this.wallTile4.Size = new System.Drawing.Size(26, 25);
+            this.wallTile4.TabIndex = 82;
+            this.wallTile4.TabStop = false;
+            this.wallTile4.Tag = "1;2";
+            // 
+            // wallTile9
+            // 
+            this.wallTile9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile9.Location = new System.Drawing.Point(1245, 411);
+            this.wallTile9.Name = "wallTile9";
+            this.wallTile9.Size = new System.Drawing.Size(26, 25);
+            this.wallTile9.TabIndex = 87;
+            this.wallTile9.TabStop = false;
+            this.wallTile9.Tag = "3;3";
+            // 
+            // wallTile8
+            // 
+            this.wallTile8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile8.Location = new System.Drawing.Point(1213, 411);
+            this.wallTile8.Name = "wallTile8";
+            this.wallTile8.Size = new System.Drawing.Size(26, 25);
+            this.wallTile8.TabIndex = 86;
+            this.wallTile8.TabStop = false;
+            this.wallTile8.Tag = "2;3";
+            // 
+            // wallTile7
+            // 
+            this.wallTile7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile7.Location = new System.Drawing.Point(1181, 411);
+            this.wallTile7.Name = "wallTile7";
+            this.wallTile7.Size = new System.Drawing.Size(26, 25);
+            this.wallTile7.TabIndex = 85;
+            this.wallTile7.TabStop = false;
+            this.wallTile7.Tag = "1;3";
+            // 
+            // wallTile10
+            // 
+            this.wallTile10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile10.Location = new System.Drawing.Point(1341, 349);
+            this.wallTile10.Name = "wallTile10";
+            this.wallTile10.Size = new System.Drawing.Size(26, 25);
+            this.wallTile10.TabIndex = 88;
+            this.wallTile10.TabStop = false;
+            this.wallTile10.Tag = "4;5";
+            // 
+            // wallTile11
+            // 
+            this.wallTile11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile11.Location = new System.Drawing.Point(1277, 380);
+            this.wallTile11.Name = "wallTile11";
+            this.wallTile11.Size = new System.Drawing.Size(26, 25);
+            this.wallTile11.TabIndex = 89;
+            this.wallTile11.TabStop = false;
+            this.wallTile11.Tag = "1;5";
+            // 
+            // wallTile12
+            // 
+            this.wallTile12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile12.Location = new System.Drawing.Point(1373, 349);
+            this.wallTile12.Name = "wallTile12";
+            this.wallTile12.Size = new System.Drawing.Size(26, 25);
+            this.wallTile12.TabIndex = 90;
+            this.wallTile12.TabStop = false;
+            this.wallTile12.Tag = "9;5";
+            // 
+            // wallTile13
+            // 
+            this.wallTile13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile13.Location = new System.Drawing.Point(1277, 349);
+            this.wallTile13.Name = "wallTile13";
+            this.wallTile13.Size = new System.Drawing.Size(26, 25);
+            this.wallTile13.TabIndex = 91;
+            this.wallTile13.TabStop = false;
+            this.wallTile13.Tag = "8;5";
+            // 
+            // wallTile14
+            // 
+            this.wallTile14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile14.Location = new System.Drawing.Point(1277, 411);
+            this.wallTile14.Name = "wallTile14";
+            this.wallTile14.Size = new System.Drawing.Size(26, 25);
+            this.wallTile14.TabIndex = 92;
+            this.wallTile14.TabStop = false;
+            this.wallTile14.Tag = "10;5";
+            // 
+            // wallTile15
+            // 
+            this.wallTile15.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile15.Location = new System.Drawing.Point(1309, 349);
+            this.wallTile15.Name = "wallTile15";
+            this.wallTile15.Size = new System.Drawing.Size(26, 25);
+            this.wallTile15.TabIndex = 93;
+            this.wallTile15.TabStop = false;
+            this.wallTile15.Tag = "7;5";
+            // 
+            // wallTile16
+            // 
+            this.wallTile16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile16.Location = new System.Drawing.Point(1405, 349);
+            this.wallTile16.Name = "wallTile16";
+            this.wallTile16.Size = new System.Drawing.Size(26, 25);
+            this.wallTile16.TabIndex = 94;
+            this.wallTile16.TabStop = false;
+            this.wallTile16.Tag = "10;6";
+            // 
+            // wallTile17
+            // 
+            this.wallTile17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile17.Location = new System.Drawing.Point(1309, 380);
+            this.wallTile17.Name = "wallTile17";
+            this.wallTile17.Size = new System.Drawing.Size(26, 25);
+            this.wallTile17.TabIndex = 95;
+            this.wallTile17.TabStop = false;
+            this.wallTile17.Tag = "8;6";
+            // 
+            // wallTile19
+            // 
+            this.wallTile19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile19.Location = new System.Drawing.Point(1309, 411);
+            this.wallTile19.Name = "wallTile19";
+            this.wallTile19.Size = new System.Drawing.Size(26, 25);
+            this.wallTile19.TabIndex = 96;
+            this.wallTile19.TabStop = false;
+            this.wallTile19.Tag = "5;6";
+            // 
+            // wallTile18
+            // 
+            this.wallTile18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile18.Location = new System.Drawing.Point(1341, 380);
+            this.wallTile18.Name = "wallTile18";
+            this.wallTile18.Size = new System.Drawing.Size(26, 25);
+            this.wallTile18.TabIndex = 97;
+            this.wallTile18.TabStop = false;
+            this.wallTile18.Tag = "6;6";
+            // 
+            // wallTile20
+            // 
+            this.wallTile20.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile20.Location = new System.Drawing.Point(1341, 411);
+            this.wallTile20.Name = "wallTile20";
+            this.wallTile20.Size = new System.Drawing.Size(26, 25);
+            this.wallTile20.TabIndex = 98;
+            this.wallTile20.TabStop = false;
+            this.wallTile20.Tag = "7;6";
+            // 
+            // wallTile24
+            // 
+            this.wallTile24.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile24.Location = new System.Drawing.Point(1405, 411);
+            this.wallTile24.Name = "wallTile24";
+            this.wallTile24.Size = new System.Drawing.Size(26, 25);
+            this.wallTile24.TabIndex = 102;
+            this.wallTile24.TabStop = false;
+            this.wallTile24.Tag = "10;7";
+            // 
+            // wallTile22
+            // 
+            this.wallTile22.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile22.Location = new System.Drawing.Point(1405, 380);
+            this.wallTile22.Name = "wallTile22";
+            this.wallTile22.Size = new System.Drawing.Size(26, 25);
+            this.wallTile22.TabIndex = 101;
+            this.wallTile22.TabStop = false;
+            this.wallTile22.Tag = "11;7";
+            // 
+            // wallTile23
+            // 
+            this.wallTile23.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile23.Location = new System.Drawing.Point(1373, 411);
+            this.wallTile23.Name = "wallTile23";
+            this.wallTile23.Size = new System.Drawing.Size(26, 25);
+            this.wallTile23.TabIndex = 100;
+            this.wallTile23.TabStop = false;
+            this.wallTile23.Tag = "11;6";
+            // 
+            // wallTile21
+            // 
+            this.wallTile21.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile21.Location = new System.Drawing.Point(1373, 380);
+            this.wallTile21.Name = "wallTile21";
+            this.wallTile21.Size = new System.Drawing.Size(26, 25);
+            this.wallTile21.TabIndex = 99;
+            this.wallTile21.TabStop = false;
+            this.wallTile21.Tag = "11;5";
+            // 
+            // wallTile25
+            // 
+            this.wallTile25.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile25.Location = new System.Drawing.Point(1181, 460);
+            this.wallTile25.Name = "wallTile25";
+            this.wallTile25.Size = new System.Drawing.Size(26, 25);
+            this.wallTile25.TabIndex = 103;
+            this.wallTile25.TabStop = false;
+            this.wallTile25.Tag = "2;5";
+            // 
+            // wallTile26
+            // 
+            this.wallTile26.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile26.Location = new System.Drawing.Point(1245, 460);
+            this.wallTile26.Name = "wallTile26";
+            this.wallTile26.Size = new System.Drawing.Size(26, 25);
+            this.wallTile26.TabIndex = 104;
+            this.wallTile26.TabStop = false;
+            this.wallTile26.Tag = "2;6";
+            // 
+            // wallTile27
+            // 
+            this.wallTile27.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile27.Location = new System.Drawing.Point(1213, 460);
+            this.wallTile27.Name = "wallTile27";
+            this.wallTile27.Size = new System.Drawing.Size(26, 25);
+            this.wallTile27.TabIndex = 105;
+            this.wallTile27.TabStop = false;
+            this.wallTile27.Tag = "3;5";
+            // 
+            // wallTile29
+            // 
+            this.wallTile29.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile29.Location = new System.Drawing.Point(1309, 460);
+            this.wallTile29.Name = "wallTile29";
+            this.wallTile29.Size = new System.Drawing.Size(26, 25);
+            this.wallTile29.TabIndex = 108;
+            this.wallTile29.TabStop = false;
+            this.wallTile29.Tag = "6;5";
+            // 
+            // wallTile30
+            // 
+            this.wallTile30.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile30.Location = new System.Drawing.Point(1341, 460);
+            this.wallTile30.Name = "wallTile30";
+            this.wallTile30.Size = new System.Drawing.Size(26, 25);
+            this.wallTile30.TabIndex = 107;
+            this.wallTile30.TabStop = false;
+            this.wallTile30.Tag = "1;6";
+            // 
+            // wallTile28
+            // 
+            this.wallTile28.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile28.Location = new System.Drawing.Point(1277, 460);
+            this.wallTile28.Name = "wallTile28";
+            this.wallTile28.Size = new System.Drawing.Size(26, 25);
+            this.wallTile28.TabIndex = 106;
+            this.wallTile28.TabStop = false;
+            this.wallTile28.Tag = "5;5";
+            // 
+            // wallTile33
+            // 
+            this.wallTile33.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile33.Location = new System.Drawing.Point(1459, 411);
+            this.wallTile33.Name = "wallTile33";
+            this.wallTile33.Size = new System.Drawing.Size(26, 25);
+            this.wallTile33.TabIndex = 111;
+            this.wallTile33.TabStop = false;
+            this.wallTile33.Tag = "8;7";
+            // 
+            // wallTile32
+            // 
+            this.wallTile32.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile32.Location = new System.Drawing.Point(1459, 380);
+            this.wallTile32.Name = "wallTile32";
+            this.wallTile32.Size = new System.Drawing.Size(26, 25);
+            this.wallTile32.TabIndex = 110;
+            this.wallTile32.TabStop = false;
+            this.wallTile32.Tag = "6;7";
+            // 
+            // wallTile31
+            // 
+            this.wallTile31.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile31.Location = new System.Drawing.Point(1459, 349);
+            this.wallTile31.Name = "wallTile31";
+            this.wallTile31.Size = new System.Drawing.Size(26, 25);
+            this.wallTile31.TabIndex = 109;
+            this.wallTile31.TabStop = false;
+            this.wallTile31.Tag = "3;6";
+            // 
+            // wallTile36
+            // 
+            this.wallTile36.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile36.Location = new System.Drawing.Point(1491, 411);
+            this.wallTile36.Name = "wallTile36";
+            this.wallTile36.Size = new System.Drawing.Size(26, 25);
+            this.wallTile36.TabIndex = 114;
+            this.wallTile36.TabStop = false;
+            this.wallTile36.Tag = "9;7";
+            // 
+            // wallTile35
+            // 
+            this.wallTile35.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile35.Location = new System.Drawing.Point(1491, 380);
+            this.wallTile35.Name = "wallTile35";
+            this.wallTile35.Size = new System.Drawing.Size(26, 25);
+            this.wallTile35.TabIndex = 113;
+            this.wallTile35.TabStop = false;
+            this.wallTile35.Tag = "7;7";
+            // 
+            // wallTile34
+            // 
+            this.wallTile34.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile34.Location = new System.Drawing.Point(1491, 349);
+            this.wallTile34.Name = "wallTile34";
+            this.wallTile34.Size = new System.Drawing.Size(26, 25);
+            this.wallTile34.TabIndex = 112;
+            this.wallTile34.TabStop = false;
+            this.wallTile34.Tag = "4;6";
+            // 
+            // wallTile41
+            // 
+            this.wallTile41.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile41.Location = new System.Drawing.Point(1405, 460);
+            this.wallTile41.Name = "wallTile41";
+            this.wallTile41.Size = new System.Drawing.Size(26, 25);
+            this.wallTile41.TabIndex = 115;
+            this.wallTile41.TabStop = false;
+            this.wallTile41.Tag = "1;7";
+            // 
+            // wallTile42
+            // 
+            this.wallTile42.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile42.Location = new System.Drawing.Point(1437, 460);
+            this.wallTile42.Name = "wallTile42";
+            this.wallTile42.Size = new System.Drawing.Size(26, 25);
+            this.wallTile42.TabIndex = 116;
+            this.wallTile42.TabStop = false;
+            this.wallTile42.Tag = "2;7";
+            // 
+            // wallTile43
+            // 
+            this.wallTile43.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile43.Location = new System.Drawing.Point(1469, 460);
+            this.wallTile43.Name = "wallTile43";
+            this.wallTile43.Size = new System.Drawing.Size(26, 25);
+            this.wallTile43.TabIndex = 117;
+            this.wallTile43.TabStop = false;
+            this.wallTile43.Tag = "3;7";
+            // 
+            // wallTile44
+            // 
+            this.wallTile44.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile44.Location = new System.Drawing.Point(1501, 460);
+            this.wallTile44.Name = "wallTile44";
+            this.wallTile44.Size = new System.Drawing.Size(26, 25);
+            this.wallTile44.TabIndex = 118;
+            this.wallTile44.TabStop = false;
+            this.wallTile44.Tag = "4;7";
+            // 
+            // wallTile45
+            // 
+            this.wallTile45.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wallTile45.Location = new System.Drawing.Point(1534, 460);
+            this.wallTile45.Name = "wallTile45";
+            this.wallTile45.Size = new System.Drawing.Size(26, 25);
+            this.wallTile45.TabIndex = 119;
+            this.wallTile45.TabStop = false;
+            this.wallTile45.Tag = "5;7";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1128, 56);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 39);
+            this.button2.TabIndex = 120;
+            this.button2.Text = "All Floor";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1221, 56);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 39);
+            this.button3.TabIndex = 121;
+            this.button3.Text = "All Wall";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(1119, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(199, 46);
+            this.label8.TabIndex = 122;
+            this.label8.Text = "Warning: These buttons will\r\nwipe the whole level";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(-1, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(70, 29);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "About";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1590, 590);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.wallTile45);
+            this.Controls.Add(this.wallTile44);
+            this.Controls.Add(this.wallTile43);
+            this.Controls.Add(this.wallTile42);
+            this.Controls.Add(this.wallTile41);
+            this.Controls.Add(this.wallTile36);
+            this.Controls.Add(this.wallTile35);
+            this.Controls.Add(this.wallTile34);
+            this.Controls.Add(this.wallTile33);
+            this.Controls.Add(this.wallTile32);
+            this.Controls.Add(this.wallTile31);
+            this.Controls.Add(this.wallTile29);
+            this.Controls.Add(this.wallTile30);
+            this.Controls.Add(this.wallTile28);
+            this.Controls.Add(this.wallTile27);
+            this.Controls.Add(this.wallTile26);
+            this.Controls.Add(this.wallTile25);
+            this.Controls.Add(this.wallTile24);
+            this.Controls.Add(this.wallTile22);
+            this.Controls.Add(this.wallTile23);
+            this.Controls.Add(this.wallTile21);
+            this.Controls.Add(this.wallTile20);
+            this.Controls.Add(this.wallTile18);
+            this.Controls.Add(this.wallTile19);
+            this.Controls.Add(this.wallTile17);
+            this.Controls.Add(this.wallTile16);
+            this.Controls.Add(this.wallTile15);
+            this.Controls.Add(this.wallTile14);
+            this.Controls.Add(this.wallTile13);
+            this.Controls.Add(this.wallTile12);
+            this.Controls.Add(this.wallTile11);
+            this.Controls.Add(this.wallTile10);
+            this.Controls.Add(this.wallTile9);
+            this.Controls.Add(this.wallTile8);
+            this.Controls.Add(this.wallTile7);
+            this.Controls.Add(this.wallTile6);
+            this.Controls.Add(this.wallTile5);
+            this.Controls.Add(this.wallTile4);
+            this.Controls.Add(this.wallTile3);
+            this.Controls.Add(this.wallTile2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
@@ -962,13 +1483,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.aSelected);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.wallDown);
-            this.Controls.Add(this.wallUp);
-            this.Controls.Add(this.wallTileR);
-            this.Controls.Add(this.wallTileL);
-            this.Controls.Add(this.wallTile);
+            this.Controls.Add(this.wallTile1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.rotatecount);
             this.Controls.Add(this.rotateclock);
@@ -1025,7 +1540,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Amazing Kye Editor v1.01";
+            this.Text = "Amazing Kye Editor v1.02";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).EndInit();
@@ -1068,13 +1583,52 @@
             ((System.ComponentModel.ISupportInitialize)(this.magnetew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magnetns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destroyer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.levelBorder1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aSelected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile42)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile43)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTile45)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1130,13 +1684,7 @@
         private System.Windows.Forms.PictureBox magnetns;
         private System.Windows.Forms.PictureBox destroyer;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox wallTile;
-        private System.Windows.Forms.Button wallTileL;
-        private System.Windows.Forms.Button wallTileR;
-        private System.Windows.Forms.Button wallUp;
-        private System.Windows.Forms.Button wallDown;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox wallTile1;
         private System.Windows.Forms.PictureBox levelBorder1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -1161,6 +1709,51 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox wallTile2;
+        private System.Windows.Forms.PictureBox wallTile3;
+        private System.Windows.Forms.PictureBox wallTile6;
+        private System.Windows.Forms.PictureBox wallTile5;
+        private System.Windows.Forms.PictureBox wallTile4;
+        private System.Windows.Forms.PictureBox wallTile9;
+        private System.Windows.Forms.PictureBox wallTile8;
+        private System.Windows.Forms.PictureBox wallTile7;
+        private System.Windows.Forms.PictureBox wallTile10;
+        private System.Windows.Forms.PictureBox wallTile11;
+        private System.Windows.Forms.PictureBox wallTile12;
+        private System.Windows.Forms.PictureBox wallTile13;
+        private System.Windows.Forms.PictureBox wallTile14;
+        private System.Windows.Forms.PictureBox wallTile15;
+        private System.Windows.Forms.PictureBox wallTile16;
+        private System.Windows.Forms.PictureBox wallTile17;
+        private System.Windows.Forms.PictureBox wallTile19;
+        private System.Windows.Forms.PictureBox wallTile18;
+        private System.Windows.Forms.PictureBox wallTile20;
+        private System.Windows.Forms.PictureBox wallTile24;
+        private System.Windows.Forms.PictureBox wallTile22;
+        private System.Windows.Forms.PictureBox wallTile23;
+        private System.Windows.Forms.PictureBox wallTile21;
+        private System.Windows.Forms.PictureBox wallTile25;
+        private System.Windows.Forms.PictureBox wallTile26;
+        private System.Windows.Forms.PictureBox wallTile27;
+        private System.Windows.Forms.PictureBox wallTile29;
+        private System.Windows.Forms.PictureBox wallTile30;
+        private System.Windows.Forms.PictureBox wallTile28;
+        private System.Windows.Forms.PictureBox wallTile33;
+        private System.Windows.Forms.PictureBox wallTile32;
+        private System.Windows.Forms.PictureBox wallTile31;
+        private System.Windows.Forms.PictureBox wallTile36;
+        private System.Windows.Forms.PictureBox wallTile35;
+        private System.Windows.Forms.PictureBox wallTile34;
+        private System.Windows.Forms.PictureBox wallTile41;
+        private System.Windows.Forms.PictureBox wallTile42;
+        private System.Windows.Forms.PictureBox wallTile43;
+        private System.Windows.Forms.PictureBox wallTile44;
+        private System.Windows.Forms.PictureBox wallTile45;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button4;
 
     }
 }
