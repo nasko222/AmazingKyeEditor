@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.kye1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.diamond1 = new System.Windows.Forms.PictureBox();
@@ -146,6 +147,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.autoWallTile = new System.Windows.Forms.PictureBox();
+            this.autoLabel = new System.Windows.Forms.Label();
+            this.loadingLabel = new System.Windows.Forms.Label();
+            this.loadTimer = new System.Windows.Forms.Timer(this.components);
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.autowallBTN = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -233,6 +242,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wallTile43)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wallTile44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wallTile45)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoWallTile)).BeginInit();
             this.SuspendLayout();
             // 
             // kye1
@@ -708,7 +718,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1181, 295);
+            this.label7.Location = new System.Drawing.Point(1183, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(379, 33);
             this.label7.TabIndex = 47;
@@ -718,7 +728,7 @@
             // wallTile1
             // 
             this.wallTile1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile1.Location = new System.Drawing.Point(1181, 349);
+            this.wallTile1.Location = new System.Drawing.Point(1183, 307);
             this.wallTile1.Name = "wallTile1";
             this.wallTile1.Size = new System.Drawing.Size(26, 25);
             this.wallTile1.TabIndex = 48;
@@ -971,7 +981,7 @@
             // wallTile2
             // 
             this.wallTile2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile2.Location = new System.Drawing.Point(1213, 349);
+            this.wallTile2.Location = new System.Drawing.Point(1215, 307);
             this.wallTile2.Name = "wallTile2";
             this.wallTile2.Size = new System.Drawing.Size(26, 25);
             this.wallTile2.TabIndex = 80;
@@ -981,7 +991,7 @@
             // wallTile3
             // 
             this.wallTile3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile3.Location = new System.Drawing.Point(1245, 349);
+            this.wallTile3.Location = new System.Drawing.Point(1247, 307);
             this.wallTile3.Name = "wallTile3";
             this.wallTile3.Size = new System.Drawing.Size(26, 25);
             this.wallTile3.TabIndex = 81;
@@ -991,7 +1001,7 @@
             // wallTile6
             // 
             this.wallTile6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile6.Location = new System.Drawing.Point(1245, 380);
+            this.wallTile6.Location = new System.Drawing.Point(1247, 338);
             this.wallTile6.Name = "wallTile6";
             this.wallTile6.Size = new System.Drawing.Size(26, 25);
             this.wallTile6.TabIndex = 84;
@@ -1001,7 +1011,7 @@
             // wallTile5
             // 
             this.wallTile5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile5.Location = new System.Drawing.Point(1213, 380);
+            this.wallTile5.Location = new System.Drawing.Point(1215, 338);
             this.wallTile5.Name = "wallTile5";
             this.wallTile5.Size = new System.Drawing.Size(26, 25);
             this.wallTile5.TabIndex = 83;
@@ -1011,7 +1021,7 @@
             // wallTile4
             // 
             this.wallTile4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile4.Location = new System.Drawing.Point(1181, 380);
+            this.wallTile4.Location = new System.Drawing.Point(1183, 338);
             this.wallTile4.Name = "wallTile4";
             this.wallTile4.Size = new System.Drawing.Size(26, 25);
             this.wallTile4.TabIndex = 82;
@@ -1021,7 +1031,7 @@
             // wallTile9
             // 
             this.wallTile9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile9.Location = new System.Drawing.Point(1245, 411);
+            this.wallTile9.Location = new System.Drawing.Point(1247, 369);
             this.wallTile9.Name = "wallTile9";
             this.wallTile9.Size = new System.Drawing.Size(26, 25);
             this.wallTile9.TabIndex = 87;
@@ -1031,7 +1041,7 @@
             // wallTile8
             // 
             this.wallTile8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile8.Location = new System.Drawing.Point(1213, 411);
+            this.wallTile8.Location = new System.Drawing.Point(1215, 369);
             this.wallTile8.Name = "wallTile8";
             this.wallTile8.Size = new System.Drawing.Size(26, 25);
             this.wallTile8.TabIndex = 86;
@@ -1041,7 +1051,7 @@
             // wallTile7
             // 
             this.wallTile7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile7.Location = new System.Drawing.Point(1181, 411);
+            this.wallTile7.Location = new System.Drawing.Point(1183, 369);
             this.wallTile7.Name = "wallTile7";
             this.wallTile7.Size = new System.Drawing.Size(26, 25);
             this.wallTile7.TabIndex = 85;
@@ -1051,7 +1061,7 @@
             // wallTile10
             // 
             this.wallTile10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile10.Location = new System.Drawing.Point(1341, 349);
+            this.wallTile10.Location = new System.Drawing.Point(1343, 307);
             this.wallTile10.Name = "wallTile10";
             this.wallTile10.Size = new System.Drawing.Size(26, 25);
             this.wallTile10.TabIndex = 88;
@@ -1061,7 +1071,7 @@
             // wallTile11
             // 
             this.wallTile11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile11.Location = new System.Drawing.Point(1277, 380);
+            this.wallTile11.Location = new System.Drawing.Point(1279, 338);
             this.wallTile11.Name = "wallTile11";
             this.wallTile11.Size = new System.Drawing.Size(26, 25);
             this.wallTile11.TabIndex = 89;
@@ -1071,7 +1081,7 @@
             // wallTile12
             // 
             this.wallTile12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile12.Location = new System.Drawing.Point(1373, 349);
+            this.wallTile12.Location = new System.Drawing.Point(1375, 307);
             this.wallTile12.Name = "wallTile12";
             this.wallTile12.Size = new System.Drawing.Size(26, 25);
             this.wallTile12.TabIndex = 90;
@@ -1081,7 +1091,7 @@
             // wallTile13
             // 
             this.wallTile13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile13.Location = new System.Drawing.Point(1277, 349);
+            this.wallTile13.Location = new System.Drawing.Point(1279, 307);
             this.wallTile13.Name = "wallTile13";
             this.wallTile13.Size = new System.Drawing.Size(26, 25);
             this.wallTile13.TabIndex = 91;
@@ -1091,7 +1101,7 @@
             // wallTile14
             // 
             this.wallTile14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile14.Location = new System.Drawing.Point(1277, 411);
+            this.wallTile14.Location = new System.Drawing.Point(1279, 369);
             this.wallTile14.Name = "wallTile14";
             this.wallTile14.Size = new System.Drawing.Size(26, 25);
             this.wallTile14.TabIndex = 92;
@@ -1101,7 +1111,7 @@
             // wallTile15
             // 
             this.wallTile15.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile15.Location = new System.Drawing.Point(1309, 349);
+            this.wallTile15.Location = new System.Drawing.Point(1311, 307);
             this.wallTile15.Name = "wallTile15";
             this.wallTile15.Size = new System.Drawing.Size(26, 25);
             this.wallTile15.TabIndex = 93;
@@ -1111,7 +1121,7 @@
             // wallTile16
             // 
             this.wallTile16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile16.Location = new System.Drawing.Point(1405, 349);
+            this.wallTile16.Location = new System.Drawing.Point(1407, 307);
             this.wallTile16.Name = "wallTile16";
             this.wallTile16.Size = new System.Drawing.Size(26, 25);
             this.wallTile16.TabIndex = 94;
@@ -1121,7 +1131,7 @@
             // wallTile17
             // 
             this.wallTile17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile17.Location = new System.Drawing.Point(1309, 380);
+            this.wallTile17.Location = new System.Drawing.Point(1311, 338);
             this.wallTile17.Name = "wallTile17";
             this.wallTile17.Size = new System.Drawing.Size(26, 25);
             this.wallTile17.TabIndex = 95;
@@ -1131,7 +1141,7 @@
             // wallTile19
             // 
             this.wallTile19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile19.Location = new System.Drawing.Point(1309, 411);
+            this.wallTile19.Location = new System.Drawing.Point(1311, 369);
             this.wallTile19.Name = "wallTile19";
             this.wallTile19.Size = new System.Drawing.Size(26, 25);
             this.wallTile19.TabIndex = 96;
@@ -1141,7 +1151,7 @@
             // wallTile18
             // 
             this.wallTile18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile18.Location = new System.Drawing.Point(1341, 380);
+            this.wallTile18.Location = new System.Drawing.Point(1343, 338);
             this.wallTile18.Name = "wallTile18";
             this.wallTile18.Size = new System.Drawing.Size(26, 25);
             this.wallTile18.TabIndex = 97;
@@ -1151,7 +1161,7 @@
             // wallTile20
             // 
             this.wallTile20.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile20.Location = new System.Drawing.Point(1341, 411);
+            this.wallTile20.Location = new System.Drawing.Point(1343, 369);
             this.wallTile20.Name = "wallTile20";
             this.wallTile20.Size = new System.Drawing.Size(26, 25);
             this.wallTile20.TabIndex = 98;
@@ -1161,7 +1171,7 @@
             // wallTile24
             // 
             this.wallTile24.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile24.Location = new System.Drawing.Point(1405, 411);
+            this.wallTile24.Location = new System.Drawing.Point(1407, 369);
             this.wallTile24.Name = "wallTile24";
             this.wallTile24.Size = new System.Drawing.Size(26, 25);
             this.wallTile24.TabIndex = 102;
@@ -1171,7 +1181,7 @@
             // wallTile22
             // 
             this.wallTile22.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile22.Location = new System.Drawing.Point(1405, 380);
+            this.wallTile22.Location = new System.Drawing.Point(1407, 338);
             this.wallTile22.Name = "wallTile22";
             this.wallTile22.Size = new System.Drawing.Size(26, 25);
             this.wallTile22.TabIndex = 101;
@@ -1181,7 +1191,7 @@
             // wallTile23
             // 
             this.wallTile23.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile23.Location = new System.Drawing.Point(1373, 411);
+            this.wallTile23.Location = new System.Drawing.Point(1375, 369);
             this.wallTile23.Name = "wallTile23";
             this.wallTile23.Size = new System.Drawing.Size(26, 25);
             this.wallTile23.TabIndex = 100;
@@ -1191,7 +1201,7 @@
             // wallTile21
             // 
             this.wallTile21.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile21.Location = new System.Drawing.Point(1373, 380);
+            this.wallTile21.Location = new System.Drawing.Point(1375, 338);
             this.wallTile21.Name = "wallTile21";
             this.wallTile21.Size = new System.Drawing.Size(26, 25);
             this.wallTile21.TabIndex = 99;
@@ -1201,7 +1211,7 @@
             // wallTile25
             // 
             this.wallTile25.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile25.Location = new System.Drawing.Point(1181, 460);
+            this.wallTile25.Location = new System.Drawing.Point(1183, 418);
             this.wallTile25.Name = "wallTile25";
             this.wallTile25.Size = new System.Drawing.Size(26, 25);
             this.wallTile25.TabIndex = 103;
@@ -1211,7 +1221,7 @@
             // wallTile26
             // 
             this.wallTile26.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile26.Location = new System.Drawing.Point(1245, 460);
+            this.wallTile26.Location = new System.Drawing.Point(1247, 418);
             this.wallTile26.Name = "wallTile26";
             this.wallTile26.Size = new System.Drawing.Size(26, 25);
             this.wallTile26.TabIndex = 104;
@@ -1221,7 +1231,7 @@
             // wallTile27
             // 
             this.wallTile27.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile27.Location = new System.Drawing.Point(1213, 460);
+            this.wallTile27.Location = new System.Drawing.Point(1215, 418);
             this.wallTile27.Name = "wallTile27";
             this.wallTile27.Size = new System.Drawing.Size(26, 25);
             this.wallTile27.TabIndex = 105;
@@ -1231,7 +1241,7 @@
             // wallTile29
             // 
             this.wallTile29.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile29.Location = new System.Drawing.Point(1309, 460);
+            this.wallTile29.Location = new System.Drawing.Point(1311, 418);
             this.wallTile29.Name = "wallTile29";
             this.wallTile29.Size = new System.Drawing.Size(26, 25);
             this.wallTile29.TabIndex = 108;
@@ -1241,7 +1251,7 @@
             // wallTile30
             // 
             this.wallTile30.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile30.Location = new System.Drawing.Point(1341, 460);
+            this.wallTile30.Location = new System.Drawing.Point(1343, 418);
             this.wallTile30.Name = "wallTile30";
             this.wallTile30.Size = new System.Drawing.Size(26, 25);
             this.wallTile30.TabIndex = 107;
@@ -1251,7 +1261,7 @@
             // wallTile28
             // 
             this.wallTile28.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile28.Location = new System.Drawing.Point(1277, 460);
+            this.wallTile28.Location = new System.Drawing.Point(1279, 418);
             this.wallTile28.Name = "wallTile28";
             this.wallTile28.Size = new System.Drawing.Size(26, 25);
             this.wallTile28.TabIndex = 106;
@@ -1261,7 +1271,7 @@
             // wallTile33
             // 
             this.wallTile33.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile33.Location = new System.Drawing.Point(1459, 411);
+            this.wallTile33.Location = new System.Drawing.Point(1461, 369);
             this.wallTile33.Name = "wallTile33";
             this.wallTile33.Size = new System.Drawing.Size(26, 25);
             this.wallTile33.TabIndex = 111;
@@ -1271,7 +1281,7 @@
             // wallTile32
             // 
             this.wallTile32.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile32.Location = new System.Drawing.Point(1459, 380);
+            this.wallTile32.Location = new System.Drawing.Point(1461, 338);
             this.wallTile32.Name = "wallTile32";
             this.wallTile32.Size = new System.Drawing.Size(26, 25);
             this.wallTile32.TabIndex = 110;
@@ -1281,7 +1291,7 @@
             // wallTile31
             // 
             this.wallTile31.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile31.Location = new System.Drawing.Point(1459, 349);
+            this.wallTile31.Location = new System.Drawing.Point(1461, 307);
             this.wallTile31.Name = "wallTile31";
             this.wallTile31.Size = new System.Drawing.Size(26, 25);
             this.wallTile31.TabIndex = 109;
@@ -1291,7 +1301,7 @@
             // wallTile36
             // 
             this.wallTile36.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile36.Location = new System.Drawing.Point(1491, 411);
+            this.wallTile36.Location = new System.Drawing.Point(1493, 369);
             this.wallTile36.Name = "wallTile36";
             this.wallTile36.Size = new System.Drawing.Size(26, 25);
             this.wallTile36.TabIndex = 114;
@@ -1301,7 +1311,7 @@
             // wallTile35
             // 
             this.wallTile35.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile35.Location = new System.Drawing.Point(1491, 380);
+            this.wallTile35.Location = new System.Drawing.Point(1493, 338);
             this.wallTile35.Name = "wallTile35";
             this.wallTile35.Size = new System.Drawing.Size(26, 25);
             this.wallTile35.TabIndex = 113;
@@ -1311,7 +1321,7 @@
             // wallTile34
             // 
             this.wallTile34.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile34.Location = new System.Drawing.Point(1491, 349);
+            this.wallTile34.Location = new System.Drawing.Point(1493, 307);
             this.wallTile34.Name = "wallTile34";
             this.wallTile34.Size = new System.Drawing.Size(26, 25);
             this.wallTile34.TabIndex = 112;
@@ -1321,7 +1331,7 @@
             // wallTile41
             // 
             this.wallTile41.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile41.Location = new System.Drawing.Point(1405, 460);
+            this.wallTile41.Location = new System.Drawing.Point(1407, 418);
             this.wallTile41.Name = "wallTile41";
             this.wallTile41.Size = new System.Drawing.Size(26, 25);
             this.wallTile41.TabIndex = 115;
@@ -1331,7 +1341,7 @@
             // wallTile42
             // 
             this.wallTile42.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile42.Location = new System.Drawing.Point(1437, 460);
+            this.wallTile42.Location = new System.Drawing.Point(1439, 418);
             this.wallTile42.Name = "wallTile42";
             this.wallTile42.Size = new System.Drawing.Size(26, 25);
             this.wallTile42.TabIndex = 116;
@@ -1341,7 +1351,7 @@
             // wallTile43
             // 
             this.wallTile43.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile43.Location = new System.Drawing.Point(1469, 460);
+            this.wallTile43.Location = new System.Drawing.Point(1471, 418);
             this.wallTile43.Name = "wallTile43";
             this.wallTile43.Size = new System.Drawing.Size(26, 25);
             this.wallTile43.TabIndex = 117;
@@ -1351,7 +1361,7 @@
             // wallTile44
             // 
             this.wallTile44.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile44.Location = new System.Drawing.Point(1501, 460);
+            this.wallTile44.Location = new System.Drawing.Point(1503, 418);
             this.wallTile44.Name = "wallTile44";
             this.wallTile44.Size = new System.Drawing.Size(26, 25);
             this.wallTile44.TabIndex = 118;
@@ -1361,7 +1371,7 @@
             // wallTile45
             // 
             this.wallTile45.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile45.Location = new System.Drawing.Point(1534, 460);
+            this.wallTile45.Location = new System.Drawing.Point(1536, 418);
             this.wallTile45.Name = "wallTile45";
             this.wallTile45.Size = new System.Drawing.Size(26, 25);
             this.wallTile45.TabIndex = 119;
@@ -1413,12 +1423,100 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1183, 460);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(106, 33);
+            this.label16.TabIndex = 123;
+            this.label16.Text = "AutoWall:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // autoWallTile
+            // 
+            this.autoWallTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(12)))), ((int)(((byte)(165)))));
+            this.autoWallTile.Location = new System.Drawing.Point(1282, 462);
+            this.autoWallTile.Name = "autoWallTile";
+            this.autoWallTile.Size = new System.Drawing.Size(26, 25);
+            this.autoWallTile.TabIndex = 124;
+            this.autoWallTile.TabStop = false;
+            this.autoWallTile.Tag = "6;5";
+            this.autoWallTile.Click += new System.EventHandler(this.autoWallTile_Click);
+            // 
+            // autoLabel
+            // 
+            this.autoLabel.AutoSize = true;
+            this.autoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(12)))), ((int)(((byte)(165)))));
+            this.autoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel.ForeColor = System.Drawing.Color.White;
+            this.autoLabel.Location = new System.Drawing.Point(1504, 56);
+            this.autoLabel.Name = "autoLabel";
+            this.autoLabel.Size = new System.Drawing.Size(59, 20);
+            this.autoLabel.TabIndex = 125;
+            this.autoLabel.Text = "(auto)";
+            this.autoLabel.Visible = false;
+            // 
+            // loadingLabel
+            // 
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.Location = new System.Drawing.Point(219, 6);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(54, 17);
+            this.loadingLabel.TabIndex = 126;
+            this.loadingLabel.Text = "loading";
+            this.loadingLabel.Visible = false;
+            // 
+            // loadTimer
+            // 
+            this.loadTimer.Interval = 1500;
+            this.loadTimer.Tick += new System.EventHandler(this.loadTimer_Tick);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(1128, 101);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(133, 21);
+            this.checkBox2.TabIndex = 127;
+            this.checkBox2.Text = "Full wall border?";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // autowallBTN
+            // 
+            this.autowallBTN.Location = new System.Drawing.Point(1333, 461);
+            this.autowallBTN.Name = "autowallBTN";
+            this.autowallBTN.Size = new System.Drawing.Size(245, 30);
+            this.autowallBTN.TabIndex = 128;
+            this.autowallBTN.Text = "Apply Autowall Everywhere";
+            this.autowallBTN.UseVisualStyleBackColor = true;
+            this.autowallBTN.Click += new System.EventHandler(this.autowallBTN_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label17.Location = new System.Drawing.Point(1325, 494);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(245, 23);
+            this.label17.TabIndex = 129;
+            this.label17.Text = "^ Warning: You cannot undo that ^";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1590, 590);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.autowallBTN);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.loadingLabel);
+            this.Controls.Add(this.autoLabel);
+            this.Controls.Add(this.autoWallTile);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button3);
@@ -1540,7 +1638,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Amazing Kye Editor v1.02";
+            this.Text = "Amazing Kye Editor v1.03";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).EndInit();
@@ -1629,6 +1727,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wallTile43)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wallTile44)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wallTile45)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoWallTile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1754,6 +1853,14 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox autoWallTile;
+        private System.Windows.Forms.Label autoLabel;
+        private System.Windows.Forms.Label loadingLabel;
+        private System.Windows.Forms.Timer loadTimer;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button autowallBTN;
+        private System.Windows.Forms.Label label17;
 
     }
 }

@@ -18,4 +18,5 @@ namespace AmazingKyeEditor
             Application.Run(new Form1());
         }
     }
+
 }

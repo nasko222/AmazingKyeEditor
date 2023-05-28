@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace AmazingKyeEditor
 {
@@ -57,8 +58,10 @@ namespace AmazingKyeEditor
         private bool tutorialLevel;
         private int levelID;
         private int stars = 1;
-
+        private bool AutoWallMode;
+        private Image currentAutoWallTex;
         private static Bitmap spritesheet;
+        private bool levelIsLoading;
 
         private Image LoadSpriteFromSheet(int x, int y)
         {
@@ -214,6 +217,8 @@ namespace AmazingKyeEditor
             wallTiles.Add(wallTile43);
             wallTiles.Add(wallTile44);
             wallTiles.Add(wallTile45);
+
+            currentAutoWallTex = LoadSpriteFromSheet(2, 2);
 
             //Pre-Generate wall tiles
             for (int w = 0; w < wallTiles.Count; w++)
@@ -378,16 +383,62 @@ namespace AmazingKyeEditor
             tile.BackColor = Color.White;
             tile.Location = new Point(x, y);
             tile.BringToFront();
-            tile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnLevelTileClick);
+            tile.MouseMove += new MouseEventHandler(this.OnLevelTileClick);
             tileField[tileID] = tile;
+            tile.Tag = "AutoUpdateTile";
             this.Controls.Add(tile);
+        }
+
+        [DllImport("user32.dll")]
+        private static extern bool SetCapture(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+
+        private bool BorderCheckPass(int root, bool bypass = false)
+        {
+            if (root < 20) return !bypass ? false : BorderPossibleObjects();
+            if (root >= 580) return !bypass ? false : BorderPossibleObjects();
+            if (root % 20 == 0) return !bypass ? false : BorderPossibleObjects();
+            if (root % 20 == 19) return !bypass ? false : BorderPossibleObjects();
+
+            return true;
+        }
+
+        private bool BorderPossibleObjects()
+        {
+            //Walls (Non auto), Generators, rotators and destroyers
+            return (objectID == 2 && !AutoWallMode) || objectID == 5 || objectID == 7 || objectID == 12;
         }
 
         private void OnLevelTileClick(object sender, MouseEventArgs e)
         {
-            
+            if (levelIsLoading) return;
+            //This code checks if you're hovering a tile from the field
+            Control control = sender as Control;
+            if (control != null && control.Tag != null && control.Tag.ToString() == "AutoUpdateTile")
+            {
+                // Capture the mouse to receive global mouse events
+                SetCapture(Handle);
+
+                // Release the captured mouse
+                ReleaseCapture();
+            }
+
+            //Prevents a crash with the wall borders
+            if (!wallHashes.ContainsKey(sender.GetHashCode())) return; 
+
             if (e.Button == MouseButtons.Right)
             {
+                if (!BorderCheckPass(wallHashes[sender.GetHashCode()]))
+                {
+                    ReplaceBorderWallPiece(wallHashes[sender.GetHashCode()]);
+                    return;
+                }
+                if (AutoWallMode)
+                {
+                    GetNeighborInfo(wallHashes[sender.GetHashCode()]);
+                }
                 //Delete object
                 tileField[wallHashes[sender.GetHashCode()]].Image = null;
                 NOFobjectID[wallHashes[sender.GetHashCode()]] = 0;
@@ -402,6 +453,8 @@ namespace AmazingKyeEditor
             }
             else if (e.Button == MouseButtons.Middle)
             {
+                if (!BorderCheckPass(wallHashes[sender.GetHashCode()])) return;
+                if (NOFobjectID[wallHashes[sender.GetHashCode()]] == 0) return;
                 aSelected.Image = tileField[wallHashes[sender.GetHashCode()]].Image;
                 objectID = NOFobjectID[wallHashes[sender.GetHashCode()]];
                 data0 = NOFdata0[wallHashes[sender.GetHashCode()]];
@@ -415,18 +468,207 @@ namespace AmazingKyeEditor
             }
             else if (e.Button == MouseButtons.Left)
             {
-                //Put selected object at place
-                tileField[wallHashes[sender.GetHashCode()]].Image = aSelected.Image;
-                NOFobjectID[wallHashes[sender.GetHashCode()]] = (byte)objectID;
-                NOFdata0[wallHashes[sender.GetHashCode()]] = (byte)data0;
-                NOFdata1[wallHashes[sender.GetHashCode()]] = (byte)data1;
-                NOFdata2[wallHashes[sender.GetHashCode()]] = (byte)data2;
-                NOFx1[wallHashes[sender.GetHashCode()]] = (byte)x1;
-                NOFx2[wallHashes[sender.GetHashCode()]] = (byte)x2;
-                NOFx3[wallHashes[sender.GetHashCode()]] = (byte)x3;
-                NOFx4[wallHashes[sender.GetHashCode()]] = (byte)x4;
-                NOFy1[wallHashes[sender.GetHashCode()]] = (byte)y1;
+                //Bypass mode, you can place certain objects
+                if (!BorderCheckPass(wallHashes[sender.GetHashCode()], true)) return;
+                if (AutoWallMode)
+                {
+                    //Auto Wall mechanic
+                    int[] xy = GetNeighborInfo(wallHashes[sender.GetHashCode()]);
+                    tileField[wallHashes[sender.GetHashCode()]].Image = currentAutoWallTex;
+                    NOFobjectID[wallHashes[sender.GetHashCode()]] = (byte)2;
+                    NOFdata0[wallHashes[sender.GetHashCode()]] = (byte)0;
+                    NOFdata1[wallHashes[sender.GetHashCode()]] = (byte)0;
+                    NOFdata2[wallHashes[sender.GetHashCode()]] = (byte)0;
+                    NOFx1[wallHashes[sender.GetHashCode()]] = (byte)xy[0];
+                    NOFx2[wallHashes[sender.GetHashCode()]] = (byte)0;
+                    NOFx3[wallHashes[sender.GetHashCode()]] = (byte)0;
+                    NOFx4[wallHashes[sender.GetHashCode()]] = (byte)0;
+                    NOFy1[wallHashes[sender.GetHashCode()]] = (byte)xy[1];
+                }
+
+                else
+                {
+                    //Put selected object at place
+                    tileField[wallHashes[sender.GetHashCode()]].Image = aSelected.Image;
+                    NOFobjectID[wallHashes[sender.GetHashCode()]] = (byte)objectID;
+                    NOFdata0[wallHashes[sender.GetHashCode()]] = (byte)data0;
+                    NOFdata1[wallHashes[sender.GetHashCode()]] = (byte)data1;
+                    NOFdata2[wallHashes[sender.GetHashCode()]] = (byte)data2;
+                    NOFx1[wallHashes[sender.GetHashCode()]] = (byte)x1;
+                    NOFx2[wallHashes[sender.GetHashCode()]] = (byte)x2;
+                    NOFx3[wallHashes[sender.GetHashCode()]] = (byte)x3;
+                    NOFx4[wallHashes[sender.GetHashCode()]] = (byte)x4;
+                    NOFy1[wallHashes[sender.GetHashCode()]] = (byte)y1;
+                }
+
             }
+        }
+
+        private void ReplaceBorderWallPiece(int root)
+        {
+            //Right clicking on a border wall piece replaces it with what was there before
+            byte[] wallTex = new byte[2];
+
+            if (root == 0) wallTex = new byte[2] { 7, 6 };
+            if (root == 19) wallTex = new byte[2] { 6, 6 };
+            if (root == 580) wallTex = new byte[2] { 5, 6 };
+            if (root == 599) wallTex = new byte[2] { 8, 6 };
+            if (root >= 1 && root < 19) wallTex = new byte[2] { 3, 2 };
+            if (root >= 581 && root < 599) wallTex = new byte[2] { 1, 2 };
+            if (root >= 1 && root < 19) wallTex = new byte[2] { 3, 2 };
+            if (root >= 20 && root < 580 && root % 20 == 0) wallTex = new byte[2] { 2, 3 };
+            if (root >= 39 && root < 580 && root % 20 == 19) wallTex = new byte[2] { 2, 1 };
+
+            if (checkBox2.Checked) wallTex = new byte[2] { 2, 2 };
+
+            tileField[root].Image = LoadSpriteFromSheet(wallTex[0], wallTex[1]);
+            NOFobjectID[root] = 2;
+            NOFdata0[root] = 0;
+            NOFdata1[root] = 0;
+            NOFdata2[root] = 0;
+            NOFx1[root] = wallTex[0];
+            NOFx2[root] = 0;
+            NOFx3[root] = 0;
+            NOFx4[root] = 0;
+            NOFy1[root] = wallTex[1];
+        }
+
+        private void SetNeighbor(int root)
+        {
+            if (BorderCheckPass(root))
+            {
+                if (NOFobjectID[root] != 2) return;
+                int[] xy2 = GetNeighborInfo(root, null, false);
+                tileField[root].Image = LoadSpriteFromSheet(xy2[0], xy2[1]);
+                NOFobjectID[root] = (byte)2;
+                NOFdata0[root] = (byte)0;
+                NOFdata1[root] = (byte)0;
+                NOFdata2[root] = (byte)0;
+                NOFx1[root] = (byte)xy2[0];
+                NOFx2[root] = (byte)0;
+                NOFx3[root] = (byte)0;
+                NOFx4[root] = (byte)0;
+                NOFy1[root] = (byte)xy2[1];
+            }
+        }
+
+        private int[] GetNeighborInfo(int root, bool[] neighbors = null, bool setMoreNeighbors = true)
+        {
+            if (root - 20 - 1 < 0) return new int[2] { 2, 2 };
+            if (root + 20 + 1 >= 600) return new int[2] { 2, 2 };
+
+            neighbors = new bool[8];
+            neighbors[0] = NOFobjectID[root - 20 - 1] == 2;
+            neighbors[1] = NOFobjectID[root -  0 - 1] == 2;
+            neighbors[2] = NOFobjectID[root + 20 - 1] == 2;
+            neighbors[3] = NOFobjectID[root + 20 - 0] == 2;
+            neighbors[4] = NOFobjectID[root + 20 + 1] == 2;
+            neighbors[5] = NOFobjectID[root +  0 + 1] == 2;
+            neighbors[6] = NOFobjectID[root - 20 + 1] == 2;
+            neighbors[7] = NOFobjectID[root - 20 + 0] == 2;
+
+            // Neighbor debug
+            /*
+            if (setMoreNeighbors)
+            {
+                
+                System.Diagnostics.Debug.WriteLine("@@@@@@@@@@@");
+
+                System.Diagnostics.Debug.WriteLine((neighbors[0].ToString() + neighbors[1] + neighbors[2]).Replace("alse", "").Replace("rue", ""));
+                System.Diagnostics.Debug.WriteLine((neighbors[7].ToString() + "X" + neighbors[3]).Replace("alse", "").Replace("rue", ""));
+                System.Diagnostics.Debug.WriteLine((neighbors[6].ToString() + neighbors[5] + neighbors[4]).Replace("alse", "").Replace("rue", ""));
+
+                System.Diagnostics.Debug.WriteLine("@@@@@@@@@@@");
+                 
+            }
+            */
+
+            int[] xy = null;
+            LoadWallAccordingtoNeighbors(out xy, neighbors[0], neighbors[1], neighbors[2], neighbors[3], neighbors[4], neighbors[5], neighbors[6], neighbors[7]);
+
+            if (setMoreNeighbors)
+            {
+                currentAutoWallTex = LoadSpriteFromSheet(xy[0], xy[1]);
+                SetNeighbor(root - 20 - 1);
+                SetNeighbor(root - 0 - 1);
+                SetNeighbor(root + 20 - 1);
+                SetNeighbor(root + 20 - 0);
+                SetNeighbor(root + 20 + 1);
+                SetNeighbor(root + 0 + 1);
+                SetNeighbor(root - 20 + 1);
+                SetNeighbor(root - 20 + 0);
+            }
+
+            return xy;
+        }
+
+        private void LoadWallAccordingtoNeighbors(out int[] xy, bool a, bool b, bool c, bool d, bool e, bool f, bool g, bool h)
+        {
+            xy = new int[2];
+            xy[0] = 2;
+            xy[1] = 2;
+
+            //Fallbacks (Sphere and square tiles)
+            if (!b && !d && !f && !h) { xy = new int[] { 10, 6 }; }
+            if (a && b && c && d && e && f && g && h) { xy = new int[] { 2, 2 }; }
+
+            //Edges without dots
+            if (b && d && !f && h) { xy = new int[] { 2, 3 }; }
+            if (b && d && f && !h) { xy = new int[] { 1, 2 }; }
+            if (!b && d && f && h) { xy = new int[] { 2, 1 }; }
+            if (b && !d && f && h) { xy = new int[] { 3, 2 }; }
+
+            //Edges with singular dots
+            if (!a && b && d && !f && h) { xy = new int[] { 5, 5 }; }
+            if (b && !c && d && !f && h) { xy = new int[] { 6, 5 }; }
+            if (!b && d && f && !g && h) { xy = new int[] { 2, 5 }; }
+            if (!b && d && !e && f && h) { xy = new int[] { 3, 5 }; }
+            if (b && !c && d && f && !h) { xy = new int[] { 6, 7 }; }
+            if (b && d && !e && f && !h) { xy = new int[] { 8, 7 }; }
+            if (!a && b && !d && f && h) { xy = new int[] { 7, 7 }; }
+            if (b && !d && f && !g && h) { xy = new int[] { 9, 7 }; }
+
+            //Ediges with double dots
+            if (!a && b && !c && d && !f && h) { xy = new int[] { 1, 6 }; }
+            if (!b && d && !e && f && !g && h) { xy = new int[] { 2, 6 }; }
+            if (b && !c && d && !e && f && !h) { xy = new int[] { 3, 6 }; }
+            if (!a && b && !d && f && !g && h) { xy = new int[] { 4, 6 }; }
+
+            //Corners without dot
+            if (!b && d && e && f && !h) { xy = new int[] { 1, 1 }; }
+            if (!b && !d && f && g && h) { xy = new int[] { 3, 1 }; }
+            if (a && b && !d && !f && h) { xy = new int[] { 3, 3 }; }
+            if (b && c && d && !f && !h) { xy = new int[] { 1, 3 }; }
+
+            //Corners with dot
+            if (!b && d && !f && !h) { xy = new int[] { 7, 5 }; }
+            if (!b && !d && f && !h) { xy = new int[] { 8, 5 }; }
+            if (!b && !d && !f && h) { xy = new int[] { 9, 5 }; }
+            if (b && !d && !f && !h) { xy = new int[] { 10, 5 }; }
+
+            //Pipe horizontal and vertical pieces
+            if (b && !d && f && !h) { xy = new int[] { 1, 5 }; }
+            if (!b && d && !f && h) { xy = new int[] { 4, 5 }; }
+
+            //Pipe end pieces
+            if (!b && d && !e && f && !h) { xy = new int[] { 11, 5 }; }
+            if (b && !c && d && !f && !h) { xy = new int[] { 11, 6 }; }
+            if (!b && !d && f && !g && h) { xy = new int[] { 11, 7 }; }
+            if (!a && b && !d && !f && h) { xy = new int[] { 10, 7 }; }
+
+            //Singular dots
+            if (a && b && c && d && e && f && !g && h) { xy = new int[] { 5, 6 }; }
+            if (a && b && !c && d && e && f && g && h) { xy = new int[] { 6, 6 }; }
+            if (a && b && c && d && !e && f && g && h) { xy = new int[] { 7, 6 }; }
+            if (!a && b && c && d && e && f && g && h) { xy = new int[] { 8, 6 }; }
+
+            //Non-singular dots
+            if (a && b && c && d && !e && f && !g && h) { xy = new int[] { 1, 7 }; }
+            if (!a && b && !c && d && e && f && g && h) { xy = new int[] { 2, 7 }; }
+            if (a && b && !c && d && !e && f && g && h) { xy = new int[] { 3, 7 }; }
+            if (!a && b && c && d && e && f && !g && h) { xy = new int[] { 4, 7 }; }
+            if (!a && b && !c && d && !e && f && !g && h) { xy = new int[] { 5, 7 }; }
+            
         }
 
         private void kye1_Click(object sender, EventArgs e)
@@ -441,6 +683,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void diamond1_Click(object sender, EventArgs e)
@@ -455,6 +699,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void box1_Click(object sender, EventArgs e)
@@ -469,6 +715,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void box2_Click(object sender, EventArgs e)
@@ -483,6 +731,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void ghostbox1_Click(object sender, EventArgs e)
@@ -497,6 +747,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void ghostbox2_Click(object sender, EventArgs e)
@@ -511,6 +763,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squarep1_Click(object sender, EventArgs e)
@@ -525,6 +779,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squarep2_Click(object sender, EventArgs e)
@@ -539,6 +795,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squarep3_Click(object sender, EventArgs e)
@@ -553,6 +811,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squarep4_Click(object sender, EventArgs e)
@@ -567,6 +827,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlep1_Click(object sender, EventArgs e)
@@ -581,6 +843,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlep2_Click(object sender, EventArgs e)
@@ -595,6 +859,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlep3_Click(object sender, EventArgs e)
@@ -609,6 +875,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlep4_Click(object sender, EventArgs e)
@@ -623,6 +891,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void pusher1_Click(object sender, EventArgs e)
@@ -637,6 +907,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void pusher2_Click(object sender, EventArgs e)
@@ -651,6 +923,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void pusher3_Click(object sender, EventArgs e)
@@ -665,6 +939,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void pusher4_Click(object sender, EventArgs e)
@@ -679,6 +955,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squaregen1_Click(object sender, EventArgs e)
@@ -693,6 +971,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squaregen2_Click(object sender, EventArgs e)
@@ -707,6 +987,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squaregen3_Click(object sender, EventArgs e)
@@ -721,6 +1003,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void squaregen4_Click(object sender, EventArgs e)
@@ -735,6 +1019,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlegen1_Click(object sender, EventArgs e)
@@ -749,6 +1035,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlegen2_Click(object sender, EventArgs e)
@@ -763,6 +1051,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlegen3_Click(object sender, EventArgs e)
@@ -777,6 +1067,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void circlegen4_Click(object sender, EventArgs e)
@@ -791,6 +1083,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void destroyer_Click(object sender, EventArgs e)
@@ -805,6 +1099,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void magnetns_Click(object sender, EventArgs e)
@@ -819,6 +1115,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void magnetew_Click(object sender, EventArgs e)
@@ -833,6 +1131,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void rotateclock_Click(object sender, EventArgs e)
@@ -847,6 +1147,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void rotatecount_Click(object sender, EventArgs e)
@@ -861,6 +1163,8 @@ namespace AmazingKyeEditor
             x3 = 0;
             x4 = 0;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         //Timers x1-x4 data is float
@@ -876,6 +1180,8 @@ namespace AmazingKyeEditor
             x3 = 0xCC;
             x4 = 0x3D;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer1_Click(object sender, EventArgs e)
@@ -890,6 +1196,8 @@ namespace AmazingKyeEditor
             x3 = 0x8C;
             x4 = 0x3F;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer2_Click(object sender, EventArgs e)
@@ -904,6 +1212,8 @@ namespace AmazingKyeEditor
             x3 = 0x06;
             x4 = 0x40;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer3_Click(object sender, EventArgs e)
@@ -918,6 +1228,8 @@ namespace AmazingKyeEditor
             x3 = 0x46;
             x4 = 0x40;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer4_Click(object sender, EventArgs e)
@@ -932,6 +1244,8 @@ namespace AmazingKyeEditor
             x3 = 0x83;
             x4 = 0x40;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer5_Click(object sender, EventArgs e)
@@ -946,6 +1260,8 @@ namespace AmazingKyeEditor
             x3 = 0xA3;
             x4 = 0x40;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer6_Click(object sender, EventArgs e)
@@ -960,6 +1276,8 @@ namespace AmazingKyeEditor
             x3 = 0xC3;
             x4 = 0x40;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer7_Click(object sender, EventArgs e)
@@ -974,6 +1292,8 @@ namespace AmazingKyeEditor
             x3 = 0xE3;
             x4 = 0x40;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer8_Click(object sender, EventArgs e)
@@ -988,6 +1308,8 @@ namespace AmazingKyeEditor
             x3 = 0x01;
             x4 = 0x41;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void timer9_Click(object sender, EventArgs e)
@@ -1002,6 +1324,8 @@ namespace AmazingKyeEditor
             x3 = 0x11;
             x4 = 0x41;
             y1 = 0;
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void LoadWall()
@@ -1031,6 +1355,8 @@ namespace AmazingKyeEditor
                 wallY = int.Parse(wallTiles[wallHashes[sender.GetHashCode()]].Tag.ToString().Substring(3, 1));
             }
             LoadWall();
+            AutoWallMode = false;
+            autoLabel.Visible = false;
         }
 
         private void saveLevelBTN_Click(object sender, EventArgs e)
@@ -1180,6 +1506,9 @@ namespace AmazingKyeEditor
 
             checkBox1.Checked = fileName.Substring(fileName.Length - 1, 1) == "t";
 
+            loadingLabel.Visible = true;
+            levelIsLoading = true;
+            this.loadTimer.Start();
             ReRenderLevel();
         }
 
@@ -1283,6 +1612,7 @@ namespace AmazingKyeEditor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            checkBox2.Checked = false;
             for (int i = 0; i < 600; i++)
             {
                 NOFobjectID[i] = 0;
@@ -1301,6 +1631,7 @@ namespace AmazingKyeEditor
 
         private void button3_Click(object sender, EventArgs e)
         {
+            checkBox2.Checked = true;
             for (int i = 0; i < 600; i++)
             {
                 NOFobjectID[i] = 2;
@@ -1426,7 +1757,31 @@ namespace AmazingKyeEditor
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Amazing Kye Editor by nasko222, version v1.02");
+            MessageBox.Show("Amazing Kye Editor by nasko222, version v1.03");
+        }
+
+        private void autoWallTile_Click(object sender, EventArgs e)
+        {
+            wallX = 2;
+            wallY = 2;
+            LoadWall();
+            AutoWallMode = true;
+            autoLabel.Visible = true;
+        }
+
+        private void loadTimer_Tick(object sender, EventArgs e)
+        {
+            loadingLabel.Visible = false;
+            levelIsLoading = false;
+            loadTimer.Stop();
+        }
+
+        private void autowallBTN_Click(object sender, EventArgs e)
+        {
+            for (int iroot = 0; iroot < 600; iroot++)
+            {
+                SetNeighbor(iroot);
+            }
         }
         
     }
