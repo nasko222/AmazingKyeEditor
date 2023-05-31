@@ -76,8 +76,6 @@
             this.magnetew = new System.Windows.Forms.PictureBox();
             this.magnetns = new System.Windows.Forms.PictureBox();
             this.destroyer = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.wallTile1 = new System.Windows.Forms.PictureBox();
             this.levelBorder1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -100,49 +98,9 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loadLevelBTN = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.wallTile2 = new System.Windows.Forms.PictureBox();
-            this.wallTile3 = new System.Windows.Forms.PictureBox();
-            this.wallTile6 = new System.Windows.Forms.PictureBox();
-            this.wallTile5 = new System.Windows.Forms.PictureBox();
-            this.wallTile4 = new System.Windows.Forms.PictureBox();
-            this.wallTile9 = new System.Windows.Forms.PictureBox();
-            this.wallTile8 = new System.Windows.Forms.PictureBox();
-            this.wallTile7 = new System.Windows.Forms.PictureBox();
-            this.wallTile10 = new System.Windows.Forms.PictureBox();
-            this.wallTile11 = new System.Windows.Forms.PictureBox();
-            this.wallTile12 = new System.Windows.Forms.PictureBox();
-            this.wallTile13 = new System.Windows.Forms.PictureBox();
-            this.wallTile14 = new System.Windows.Forms.PictureBox();
-            this.wallTile15 = new System.Windows.Forms.PictureBox();
-            this.wallTile16 = new System.Windows.Forms.PictureBox();
-            this.wallTile17 = new System.Windows.Forms.PictureBox();
-            this.wallTile19 = new System.Windows.Forms.PictureBox();
-            this.wallTile18 = new System.Windows.Forms.PictureBox();
-            this.wallTile20 = new System.Windows.Forms.PictureBox();
-            this.wallTile24 = new System.Windows.Forms.PictureBox();
-            this.wallTile22 = new System.Windows.Forms.PictureBox();
-            this.wallTile23 = new System.Windows.Forms.PictureBox();
-            this.wallTile21 = new System.Windows.Forms.PictureBox();
-            this.wallTile25 = new System.Windows.Forms.PictureBox();
-            this.wallTile26 = new System.Windows.Forms.PictureBox();
-            this.wallTile27 = new System.Windows.Forms.PictureBox();
-            this.wallTile29 = new System.Windows.Forms.PictureBox();
-            this.wallTile30 = new System.Windows.Forms.PictureBox();
-            this.wallTile28 = new System.Windows.Forms.PictureBox();
-            this.wallTile33 = new System.Windows.Forms.PictureBox();
-            this.wallTile32 = new System.Windows.Forms.PictureBox();
-            this.wallTile31 = new System.Windows.Forms.PictureBox();
-            this.wallTile36 = new System.Windows.Forms.PictureBox();
-            this.wallTile35 = new System.Windows.Forms.PictureBox();
-            this.wallTile34 = new System.Windows.Forms.PictureBox();
-            this.wallTile41 = new System.Windows.Forms.PictureBox();
-            this.wallTile42 = new System.Windows.Forms.PictureBox();
-            this.wallTile43 = new System.Windows.Forms.PictureBox();
-            this.wallTile44 = new System.Windows.Forms.PictureBox();
-            this.wallTile45 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -155,6 +113,11 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.autowallBTN = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.rawKyeBTN = new System.Windows.Forms.Button();
+            this.blendingCheckbox = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.manualLabel = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -196,59 +159,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.magnetew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magnetns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.destroyer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.levelBorder1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aSelected)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile35)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile41)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile43)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoWallTile)).BeginInit();
             this.SuspendLayout();
             // 
             // kye1
             // 
             this.kye1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.kye1.Location = new System.Drawing.Point(1013, 45);
+            this.kye1.Location = new System.Drawing.Point(946, 45);
             this.kye1.Name = "kye1";
             this.kye1.Size = new System.Drawing.Size(26, 25);
             this.kye1.TabIndex = 0;
@@ -258,7 +180,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(984, 9);
+            this.label1.Location = new System.Drawing.Point(917, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 33);
             this.label1.TabIndex = 1;
@@ -268,7 +190,7 @@
             // diamond1
             // 
             this.diamond1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.diamond1.Location = new System.Drawing.Point(1061, 45);
+            this.diamond1.Location = new System.Drawing.Point(994, 45);
             this.diamond1.Name = "diamond1";
             this.diamond1.Size = new System.Drawing.Size(26, 25);
             this.diamond1.TabIndex = 2;
@@ -278,7 +200,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(993, 73);
+            this.label2.Location = new System.Drawing.Point(926, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 33);
             this.label2.TabIndex = 3;
@@ -288,7 +210,7 @@
             // box1
             // 
             this.box1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.box1.Location = new System.Drawing.Point(990, 109);
+            this.box1.Location = new System.Drawing.Point(923, 109);
             this.box1.Name = "box1";
             this.box1.Size = new System.Drawing.Size(26, 25);
             this.box1.TabIndex = 4;
@@ -298,7 +220,7 @@
             // box2
             // 
             this.box2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.box2.Location = new System.Drawing.Point(1022, 109);
+            this.box2.Location = new System.Drawing.Point(955, 109);
             this.box2.Name = "box2";
             this.box2.Size = new System.Drawing.Size(26, 25);
             this.box2.TabIndex = 5;
@@ -308,7 +230,7 @@
             // ghostbox1
             // 
             this.ghostbox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ghostbox1.Location = new System.Drawing.Point(1054, 109);
+            this.ghostbox1.Location = new System.Drawing.Point(987, 109);
             this.ghostbox1.Name = "ghostbox1";
             this.ghostbox1.Size = new System.Drawing.Size(26, 25);
             this.ghostbox1.TabIndex = 6;
@@ -318,7 +240,7 @@
             // ghostbox2
             // 
             this.ghostbox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ghostbox2.Location = new System.Drawing.Point(1086, 109);
+            this.ghostbox2.Location = new System.Drawing.Point(1019, 109);
             this.ghostbox2.Name = "ghostbox2";
             this.ghostbox2.Size = new System.Drawing.Size(26, 25);
             this.ghostbox2.TabIndex = 7;
@@ -328,7 +250,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(993, 137);
+            this.label3.Location = new System.Drawing.Point(926, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 33);
             this.label3.TabIndex = 8;
@@ -338,7 +260,7 @@
             // squarep4
             // 
             this.squarep4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squarep4.Location = new System.Drawing.Point(1086, 173);
+            this.squarep4.Location = new System.Drawing.Point(1019, 173);
             this.squarep4.Name = "squarep4";
             this.squarep4.Size = new System.Drawing.Size(26, 25);
             this.squarep4.TabIndex = 12;
@@ -348,7 +270,7 @@
             // squarep3
             // 
             this.squarep3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squarep3.Location = new System.Drawing.Point(1054, 173);
+            this.squarep3.Location = new System.Drawing.Point(987, 173);
             this.squarep3.Name = "squarep3";
             this.squarep3.Size = new System.Drawing.Size(26, 25);
             this.squarep3.TabIndex = 11;
@@ -358,7 +280,7 @@
             // squarep2
             // 
             this.squarep2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squarep2.Location = new System.Drawing.Point(1022, 173);
+            this.squarep2.Location = new System.Drawing.Point(955, 173);
             this.squarep2.Name = "squarep2";
             this.squarep2.Size = new System.Drawing.Size(26, 25);
             this.squarep2.TabIndex = 10;
@@ -368,7 +290,7 @@
             // squarep1
             // 
             this.squarep1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squarep1.Location = new System.Drawing.Point(990, 173);
+            this.squarep1.Location = new System.Drawing.Point(923, 173);
             this.squarep1.Name = "squarep1";
             this.squarep1.Size = new System.Drawing.Size(26, 25);
             this.squarep1.TabIndex = 9;
@@ -378,7 +300,7 @@
             // circlep4
             // 
             this.circlep4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlep4.Location = new System.Drawing.Point(1086, 204);
+            this.circlep4.Location = new System.Drawing.Point(1019, 204);
             this.circlep4.Name = "circlep4";
             this.circlep4.Size = new System.Drawing.Size(26, 25);
             this.circlep4.TabIndex = 16;
@@ -388,7 +310,7 @@
             // circlep3
             // 
             this.circlep3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlep3.Location = new System.Drawing.Point(1054, 204);
+            this.circlep3.Location = new System.Drawing.Point(987, 204);
             this.circlep3.Name = "circlep3";
             this.circlep3.Size = new System.Drawing.Size(26, 25);
             this.circlep3.TabIndex = 15;
@@ -398,7 +320,7 @@
             // circlep2
             // 
             this.circlep2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlep2.Location = new System.Drawing.Point(1022, 204);
+            this.circlep2.Location = new System.Drawing.Point(955, 204);
             this.circlep2.Name = "circlep2";
             this.circlep2.Size = new System.Drawing.Size(26, 25);
             this.circlep2.TabIndex = 14;
@@ -408,7 +330,7 @@
             // circlep1
             // 
             this.circlep1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlep1.Location = new System.Drawing.Point(990, 204);
+            this.circlep1.Location = new System.Drawing.Point(923, 204);
             this.circlep1.Name = "circlep1";
             this.circlep1.Size = new System.Drawing.Size(26, 25);
             this.circlep1.TabIndex = 13;
@@ -418,7 +340,7 @@
             // pusher4
             // 
             this.pusher4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pusher4.Location = new System.Drawing.Point(1086, 235);
+            this.pusher4.Location = new System.Drawing.Point(1019, 235);
             this.pusher4.Name = "pusher4";
             this.pusher4.Size = new System.Drawing.Size(26, 25);
             this.pusher4.TabIndex = 20;
@@ -428,7 +350,7 @@
             // pusher3
             // 
             this.pusher3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pusher3.Location = new System.Drawing.Point(1054, 235);
+            this.pusher3.Location = new System.Drawing.Point(987, 235);
             this.pusher3.Name = "pusher3";
             this.pusher3.Size = new System.Drawing.Size(26, 25);
             this.pusher3.TabIndex = 19;
@@ -438,7 +360,7 @@
             // pusher2
             // 
             this.pusher2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pusher2.Location = new System.Drawing.Point(1022, 235);
+            this.pusher2.Location = new System.Drawing.Point(955, 235);
             this.pusher2.Name = "pusher2";
             this.pusher2.Size = new System.Drawing.Size(26, 25);
             this.pusher2.TabIndex = 18;
@@ -448,7 +370,7 @@
             // pusher1
             // 
             this.pusher1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pusher1.Location = new System.Drawing.Point(990, 235);
+            this.pusher1.Location = new System.Drawing.Point(923, 235);
             this.pusher1.Name = "pusher1";
             this.pusher1.Size = new System.Drawing.Size(26, 25);
             this.pusher1.TabIndex = 17;
@@ -458,7 +380,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(984, 263);
+            this.label4.Location = new System.Drawing.Point(917, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 33);
             this.label4.TabIndex = 21;
@@ -468,7 +390,7 @@
             // circlegen4
             // 
             this.circlegen4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlegen4.Location = new System.Drawing.Point(1086, 326);
+            this.circlegen4.Location = new System.Drawing.Point(1019, 326);
             this.circlegen4.Name = "circlegen4";
             this.circlegen4.Size = new System.Drawing.Size(26, 25);
             this.circlegen4.TabIndex = 29;
@@ -478,7 +400,7 @@
             // circlegen3
             // 
             this.circlegen3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlegen3.Location = new System.Drawing.Point(1054, 326);
+            this.circlegen3.Location = new System.Drawing.Point(987, 326);
             this.circlegen3.Name = "circlegen3";
             this.circlegen3.Size = new System.Drawing.Size(26, 25);
             this.circlegen3.TabIndex = 28;
@@ -488,7 +410,7 @@
             // circlegen2
             // 
             this.circlegen2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlegen2.Location = new System.Drawing.Point(1022, 326);
+            this.circlegen2.Location = new System.Drawing.Point(955, 326);
             this.circlegen2.Name = "circlegen2";
             this.circlegen2.Size = new System.Drawing.Size(26, 25);
             this.circlegen2.TabIndex = 27;
@@ -498,7 +420,7 @@
             // circlegen1
             // 
             this.circlegen1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circlegen1.Location = new System.Drawing.Point(990, 326);
+            this.circlegen1.Location = new System.Drawing.Point(923, 326);
             this.circlegen1.Name = "circlegen1";
             this.circlegen1.Size = new System.Drawing.Size(26, 25);
             this.circlegen1.TabIndex = 26;
@@ -508,7 +430,7 @@
             // squaregen4
             // 
             this.squaregen4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squaregen4.Location = new System.Drawing.Point(1086, 295);
+            this.squaregen4.Location = new System.Drawing.Point(1019, 295);
             this.squaregen4.Name = "squaregen4";
             this.squaregen4.Size = new System.Drawing.Size(26, 25);
             this.squaregen4.TabIndex = 25;
@@ -518,7 +440,7 @@
             // squaregen3
             // 
             this.squaregen3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squaregen3.Location = new System.Drawing.Point(1054, 295);
+            this.squaregen3.Location = new System.Drawing.Point(987, 295);
             this.squaregen3.Name = "squaregen3";
             this.squaregen3.Size = new System.Drawing.Size(26, 25);
             this.squaregen3.TabIndex = 24;
@@ -528,7 +450,7 @@
             // squaregen2
             // 
             this.squaregen2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squaregen2.Location = new System.Drawing.Point(1022, 295);
+            this.squaregen2.Location = new System.Drawing.Point(955, 295);
             this.squaregen2.Name = "squaregen2";
             this.squaregen2.Size = new System.Drawing.Size(26, 25);
             this.squaregen2.TabIndex = 23;
@@ -538,7 +460,7 @@
             // squaregen1
             // 
             this.squaregen1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.squaregen1.Location = new System.Drawing.Point(990, 295);
+            this.squaregen1.Location = new System.Drawing.Point(923, 295);
             this.squaregen1.Name = "squaregen1";
             this.squaregen1.Size = new System.Drawing.Size(26, 25);
             this.squaregen1.TabIndex = 22;
@@ -548,7 +470,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(968, 359);
+            this.label5.Location = new System.Drawing.Point(911, 359);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 33);
             this.label5.TabIndex = 30;
@@ -558,7 +480,7 @@
             // timer3
             // 
             this.timer3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer3.Location = new System.Drawing.Point(1064, 395);
+            this.timer3.Location = new System.Drawing.Point(1007, 395);
             this.timer3.Name = "timer3";
             this.timer3.Size = new System.Drawing.Size(26, 25);
             this.timer3.TabIndex = 34;
@@ -568,7 +490,7 @@
             // timer2
             // 
             this.timer2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer2.Location = new System.Drawing.Point(1032, 395);
+            this.timer2.Location = new System.Drawing.Point(975, 395);
             this.timer2.Name = "timer2";
             this.timer2.Size = new System.Drawing.Size(26, 25);
             this.timer2.TabIndex = 33;
@@ -578,7 +500,7 @@
             // timer1
             // 
             this.timer1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer1.Location = new System.Drawing.Point(1000, 395);
+            this.timer1.Location = new System.Drawing.Point(943, 395);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(26, 25);
             this.timer1.TabIndex = 32;
@@ -588,7 +510,7 @@
             // timer0
             // 
             this.timer0.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer0.Location = new System.Drawing.Point(968, 395);
+            this.timer0.Location = new System.Drawing.Point(911, 395);
             this.timer0.Name = "timer0";
             this.timer0.Size = new System.Drawing.Size(26, 25);
             this.timer0.TabIndex = 31;
@@ -598,7 +520,7 @@
             // timer4
             // 
             this.timer4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer4.Location = new System.Drawing.Point(1096, 395);
+            this.timer4.Location = new System.Drawing.Point(1039, 395);
             this.timer4.Name = "timer4";
             this.timer4.Size = new System.Drawing.Size(26, 25);
             this.timer4.TabIndex = 35;
@@ -608,7 +530,7 @@
             // timer9
             // 
             this.timer9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer9.Location = new System.Drawing.Point(1096, 426);
+            this.timer9.Location = new System.Drawing.Point(1039, 426);
             this.timer9.Name = "timer9";
             this.timer9.Size = new System.Drawing.Size(26, 25);
             this.timer9.TabIndex = 40;
@@ -618,7 +540,7 @@
             // timer8
             // 
             this.timer8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer8.Location = new System.Drawing.Point(1064, 426);
+            this.timer8.Location = new System.Drawing.Point(1007, 426);
             this.timer8.Name = "timer8";
             this.timer8.Size = new System.Drawing.Size(26, 25);
             this.timer8.TabIndex = 39;
@@ -628,7 +550,7 @@
             // timer7
             // 
             this.timer7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer7.Location = new System.Drawing.Point(1032, 426);
+            this.timer7.Location = new System.Drawing.Point(975, 426);
             this.timer7.Name = "timer7";
             this.timer7.Size = new System.Drawing.Size(26, 25);
             this.timer7.TabIndex = 38;
@@ -638,7 +560,7 @@
             // timer6
             // 
             this.timer6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer6.Location = new System.Drawing.Point(1000, 426);
+            this.timer6.Location = new System.Drawing.Point(943, 426);
             this.timer6.Name = "timer6";
             this.timer6.Size = new System.Drawing.Size(26, 25);
             this.timer6.TabIndex = 37;
@@ -648,7 +570,7 @@
             // timer5
             // 
             this.timer5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.timer5.Location = new System.Drawing.Point(968, 426);
+            this.timer5.Location = new System.Drawing.Point(911, 426);
             this.timer5.Name = "timer5";
             this.timer5.Size = new System.Drawing.Size(26, 25);
             this.timer5.TabIndex = 36;
@@ -658,7 +580,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(974, 460);
+            this.label6.Location = new System.Drawing.Point(917, 460);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 33);
             this.label6.TabIndex = 41;
@@ -668,7 +590,7 @@
             // rotatecount
             // 
             this.rotatecount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rotatecount.Location = new System.Drawing.Point(1093, 496);
+            this.rotatecount.Location = new System.Drawing.Point(1036, 496);
             this.rotatecount.Name = "rotatecount";
             this.rotatecount.Size = new System.Drawing.Size(26, 25);
             this.rotatecount.TabIndex = 46;
@@ -678,7 +600,7 @@
             // rotateclock
             // 
             this.rotateclock.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rotateclock.Location = new System.Drawing.Point(1061, 496);
+            this.rotateclock.Location = new System.Drawing.Point(1004, 496);
             this.rotateclock.Name = "rotateclock";
             this.rotateclock.Size = new System.Drawing.Size(26, 25);
             this.rotateclock.TabIndex = 45;
@@ -688,7 +610,7 @@
             // magnetew
             // 
             this.magnetew.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.magnetew.Location = new System.Drawing.Point(1029, 496);
+            this.magnetew.Location = new System.Drawing.Point(972, 496);
             this.magnetew.Name = "magnetew";
             this.magnetew.Size = new System.Drawing.Size(26, 25);
             this.magnetew.TabIndex = 44;
@@ -698,7 +620,7 @@
             // magnetns
             // 
             this.magnetns.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.magnetns.Location = new System.Drawing.Point(997, 496);
+            this.magnetns.Location = new System.Drawing.Point(940, 496);
             this.magnetns.Name = "magnetns";
             this.magnetns.Size = new System.Drawing.Size(26, 25);
             this.magnetns.TabIndex = 43;
@@ -708,32 +630,12 @@
             // destroyer
             // 
             this.destroyer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.destroyer.Location = new System.Drawing.Point(965, 496);
+            this.destroyer.Location = new System.Drawing.Point(908, 496);
             this.destroyer.Name = "destroyer";
             this.destroyer.Size = new System.Drawing.Size(26, 25);
             this.destroyer.TabIndex = 42;
             this.destroyer.TabStop = false;
             this.destroyer.Click += new System.EventHandler(this.destroyer_Click);
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1183, 266);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(379, 33);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Walls";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // wallTile1
-            // 
-            this.wallTile1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile1.Location = new System.Drawing.Point(1183, 307);
-            this.wallTile1.Name = "wallTile1";
-            this.wallTile1.Size = new System.Drawing.Size(26, 25);
-            this.wallTile1.TabIndex = 48;
-            this.wallTile1.TabStop = false;
-            this.wallTile1.Tag = "1;1";
             // 
             // levelBorder1
             // 
@@ -953,16 +855,16 @@
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
-            // button1
+            // loadLevelBTN
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1206, 544);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 39);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "Load Level";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loadLevelBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadLevelBTN.Location = new System.Drawing.Point(1206, 544);
+            this.loadLevelBTN.Name = "loadLevelBTN";
+            this.loadLevelBTN.Size = new System.Drawing.Size(183, 39);
+            this.loadLevelBTN.TabIndex = 78;
+            this.loadLevelBTN.Text = "Load Level";
+            this.loadLevelBTN.UseVisualStyleBackColor = true;
+            this.loadLevelBTN.Click += new System.EventHandler(this.button1_Click);
             // 
             // openFileDialog1
             // 
@@ -977,406 +879,6 @@
             this.checkBox1.TabIndex = 79;
             this.checkBox1.Text = "Tutorial Level?";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // wallTile2
-            // 
-            this.wallTile2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile2.Location = new System.Drawing.Point(1215, 307);
-            this.wallTile2.Name = "wallTile2";
-            this.wallTile2.Size = new System.Drawing.Size(26, 25);
-            this.wallTile2.TabIndex = 80;
-            this.wallTile2.TabStop = false;
-            this.wallTile2.Tag = "2;1";
-            // 
-            // wallTile3
-            // 
-            this.wallTile3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile3.Location = new System.Drawing.Point(1247, 307);
-            this.wallTile3.Name = "wallTile3";
-            this.wallTile3.Size = new System.Drawing.Size(26, 25);
-            this.wallTile3.TabIndex = 81;
-            this.wallTile3.TabStop = false;
-            this.wallTile3.Tag = "3;1";
-            // 
-            // wallTile6
-            // 
-            this.wallTile6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile6.Location = new System.Drawing.Point(1247, 338);
-            this.wallTile6.Name = "wallTile6";
-            this.wallTile6.Size = new System.Drawing.Size(26, 25);
-            this.wallTile6.TabIndex = 84;
-            this.wallTile6.TabStop = false;
-            this.wallTile6.Tag = "3;2";
-            // 
-            // wallTile5
-            // 
-            this.wallTile5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile5.Location = new System.Drawing.Point(1215, 338);
-            this.wallTile5.Name = "wallTile5";
-            this.wallTile5.Size = new System.Drawing.Size(26, 25);
-            this.wallTile5.TabIndex = 83;
-            this.wallTile5.TabStop = false;
-            this.wallTile5.Tag = "2;2";
-            // 
-            // wallTile4
-            // 
-            this.wallTile4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile4.Location = new System.Drawing.Point(1183, 338);
-            this.wallTile4.Name = "wallTile4";
-            this.wallTile4.Size = new System.Drawing.Size(26, 25);
-            this.wallTile4.TabIndex = 82;
-            this.wallTile4.TabStop = false;
-            this.wallTile4.Tag = "1;2";
-            // 
-            // wallTile9
-            // 
-            this.wallTile9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile9.Location = new System.Drawing.Point(1247, 369);
-            this.wallTile9.Name = "wallTile9";
-            this.wallTile9.Size = new System.Drawing.Size(26, 25);
-            this.wallTile9.TabIndex = 87;
-            this.wallTile9.TabStop = false;
-            this.wallTile9.Tag = "3;3";
-            // 
-            // wallTile8
-            // 
-            this.wallTile8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile8.Location = new System.Drawing.Point(1215, 369);
-            this.wallTile8.Name = "wallTile8";
-            this.wallTile8.Size = new System.Drawing.Size(26, 25);
-            this.wallTile8.TabIndex = 86;
-            this.wallTile8.TabStop = false;
-            this.wallTile8.Tag = "2;3";
-            // 
-            // wallTile7
-            // 
-            this.wallTile7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile7.Location = new System.Drawing.Point(1183, 369);
-            this.wallTile7.Name = "wallTile7";
-            this.wallTile7.Size = new System.Drawing.Size(26, 25);
-            this.wallTile7.TabIndex = 85;
-            this.wallTile7.TabStop = false;
-            this.wallTile7.Tag = "1;3";
-            // 
-            // wallTile10
-            // 
-            this.wallTile10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile10.Location = new System.Drawing.Point(1343, 307);
-            this.wallTile10.Name = "wallTile10";
-            this.wallTile10.Size = new System.Drawing.Size(26, 25);
-            this.wallTile10.TabIndex = 88;
-            this.wallTile10.TabStop = false;
-            this.wallTile10.Tag = "4;5";
-            // 
-            // wallTile11
-            // 
-            this.wallTile11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile11.Location = new System.Drawing.Point(1279, 338);
-            this.wallTile11.Name = "wallTile11";
-            this.wallTile11.Size = new System.Drawing.Size(26, 25);
-            this.wallTile11.TabIndex = 89;
-            this.wallTile11.TabStop = false;
-            this.wallTile11.Tag = "1;5";
-            // 
-            // wallTile12
-            // 
-            this.wallTile12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile12.Location = new System.Drawing.Point(1375, 307);
-            this.wallTile12.Name = "wallTile12";
-            this.wallTile12.Size = new System.Drawing.Size(26, 25);
-            this.wallTile12.TabIndex = 90;
-            this.wallTile12.TabStop = false;
-            this.wallTile12.Tag = "9;5";
-            // 
-            // wallTile13
-            // 
-            this.wallTile13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile13.Location = new System.Drawing.Point(1279, 307);
-            this.wallTile13.Name = "wallTile13";
-            this.wallTile13.Size = new System.Drawing.Size(26, 25);
-            this.wallTile13.TabIndex = 91;
-            this.wallTile13.TabStop = false;
-            this.wallTile13.Tag = "8;5";
-            // 
-            // wallTile14
-            // 
-            this.wallTile14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile14.Location = new System.Drawing.Point(1279, 369);
-            this.wallTile14.Name = "wallTile14";
-            this.wallTile14.Size = new System.Drawing.Size(26, 25);
-            this.wallTile14.TabIndex = 92;
-            this.wallTile14.TabStop = false;
-            this.wallTile14.Tag = "10;5";
-            // 
-            // wallTile15
-            // 
-            this.wallTile15.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile15.Location = new System.Drawing.Point(1311, 307);
-            this.wallTile15.Name = "wallTile15";
-            this.wallTile15.Size = new System.Drawing.Size(26, 25);
-            this.wallTile15.TabIndex = 93;
-            this.wallTile15.TabStop = false;
-            this.wallTile15.Tag = "7;5";
-            // 
-            // wallTile16
-            // 
-            this.wallTile16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile16.Location = new System.Drawing.Point(1407, 307);
-            this.wallTile16.Name = "wallTile16";
-            this.wallTile16.Size = new System.Drawing.Size(26, 25);
-            this.wallTile16.TabIndex = 94;
-            this.wallTile16.TabStop = false;
-            this.wallTile16.Tag = "10;6";
-            // 
-            // wallTile17
-            // 
-            this.wallTile17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile17.Location = new System.Drawing.Point(1311, 338);
-            this.wallTile17.Name = "wallTile17";
-            this.wallTile17.Size = new System.Drawing.Size(26, 25);
-            this.wallTile17.TabIndex = 95;
-            this.wallTile17.TabStop = false;
-            this.wallTile17.Tag = "8;6";
-            // 
-            // wallTile19
-            // 
-            this.wallTile19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile19.Location = new System.Drawing.Point(1311, 369);
-            this.wallTile19.Name = "wallTile19";
-            this.wallTile19.Size = new System.Drawing.Size(26, 25);
-            this.wallTile19.TabIndex = 96;
-            this.wallTile19.TabStop = false;
-            this.wallTile19.Tag = "5;6";
-            // 
-            // wallTile18
-            // 
-            this.wallTile18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile18.Location = new System.Drawing.Point(1343, 338);
-            this.wallTile18.Name = "wallTile18";
-            this.wallTile18.Size = new System.Drawing.Size(26, 25);
-            this.wallTile18.TabIndex = 97;
-            this.wallTile18.TabStop = false;
-            this.wallTile18.Tag = "6;6";
-            // 
-            // wallTile20
-            // 
-            this.wallTile20.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile20.Location = new System.Drawing.Point(1343, 369);
-            this.wallTile20.Name = "wallTile20";
-            this.wallTile20.Size = new System.Drawing.Size(26, 25);
-            this.wallTile20.TabIndex = 98;
-            this.wallTile20.TabStop = false;
-            this.wallTile20.Tag = "7;6";
-            // 
-            // wallTile24
-            // 
-            this.wallTile24.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile24.Location = new System.Drawing.Point(1407, 369);
-            this.wallTile24.Name = "wallTile24";
-            this.wallTile24.Size = new System.Drawing.Size(26, 25);
-            this.wallTile24.TabIndex = 102;
-            this.wallTile24.TabStop = false;
-            this.wallTile24.Tag = "10;7";
-            // 
-            // wallTile22
-            // 
-            this.wallTile22.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile22.Location = new System.Drawing.Point(1407, 338);
-            this.wallTile22.Name = "wallTile22";
-            this.wallTile22.Size = new System.Drawing.Size(26, 25);
-            this.wallTile22.TabIndex = 101;
-            this.wallTile22.TabStop = false;
-            this.wallTile22.Tag = "11;7";
-            // 
-            // wallTile23
-            // 
-            this.wallTile23.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile23.Location = new System.Drawing.Point(1375, 369);
-            this.wallTile23.Name = "wallTile23";
-            this.wallTile23.Size = new System.Drawing.Size(26, 25);
-            this.wallTile23.TabIndex = 100;
-            this.wallTile23.TabStop = false;
-            this.wallTile23.Tag = "11;6";
-            // 
-            // wallTile21
-            // 
-            this.wallTile21.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile21.Location = new System.Drawing.Point(1375, 338);
-            this.wallTile21.Name = "wallTile21";
-            this.wallTile21.Size = new System.Drawing.Size(26, 25);
-            this.wallTile21.TabIndex = 99;
-            this.wallTile21.TabStop = false;
-            this.wallTile21.Tag = "11;5";
-            // 
-            // wallTile25
-            // 
-            this.wallTile25.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile25.Location = new System.Drawing.Point(1183, 418);
-            this.wallTile25.Name = "wallTile25";
-            this.wallTile25.Size = new System.Drawing.Size(26, 25);
-            this.wallTile25.TabIndex = 103;
-            this.wallTile25.TabStop = false;
-            this.wallTile25.Tag = "2;5";
-            // 
-            // wallTile26
-            // 
-            this.wallTile26.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile26.Location = new System.Drawing.Point(1247, 418);
-            this.wallTile26.Name = "wallTile26";
-            this.wallTile26.Size = new System.Drawing.Size(26, 25);
-            this.wallTile26.TabIndex = 104;
-            this.wallTile26.TabStop = false;
-            this.wallTile26.Tag = "2;6";
-            // 
-            // wallTile27
-            // 
-            this.wallTile27.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile27.Location = new System.Drawing.Point(1215, 418);
-            this.wallTile27.Name = "wallTile27";
-            this.wallTile27.Size = new System.Drawing.Size(26, 25);
-            this.wallTile27.TabIndex = 105;
-            this.wallTile27.TabStop = false;
-            this.wallTile27.Tag = "3;5";
-            // 
-            // wallTile29
-            // 
-            this.wallTile29.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile29.Location = new System.Drawing.Point(1311, 418);
-            this.wallTile29.Name = "wallTile29";
-            this.wallTile29.Size = new System.Drawing.Size(26, 25);
-            this.wallTile29.TabIndex = 108;
-            this.wallTile29.TabStop = false;
-            this.wallTile29.Tag = "6;5";
-            // 
-            // wallTile30
-            // 
-            this.wallTile30.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile30.Location = new System.Drawing.Point(1343, 418);
-            this.wallTile30.Name = "wallTile30";
-            this.wallTile30.Size = new System.Drawing.Size(26, 25);
-            this.wallTile30.TabIndex = 107;
-            this.wallTile30.TabStop = false;
-            this.wallTile30.Tag = "1;6";
-            // 
-            // wallTile28
-            // 
-            this.wallTile28.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile28.Location = new System.Drawing.Point(1279, 418);
-            this.wallTile28.Name = "wallTile28";
-            this.wallTile28.Size = new System.Drawing.Size(26, 25);
-            this.wallTile28.TabIndex = 106;
-            this.wallTile28.TabStop = false;
-            this.wallTile28.Tag = "5;5";
-            // 
-            // wallTile33
-            // 
-            this.wallTile33.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile33.Location = new System.Drawing.Point(1461, 369);
-            this.wallTile33.Name = "wallTile33";
-            this.wallTile33.Size = new System.Drawing.Size(26, 25);
-            this.wallTile33.TabIndex = 111;
-            this.wallTile33.TabStop = false;
-            this.wallTile33.Tag = "8;7";
-            // 
-            // wallTile32
-            // 
-            this.wallTile32.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile32.Location = new System.Drawing.Point(1461, 338);
-            this.wallTile32.Name = "wallTile32";
-            this.wallTile32.Size = new System.Drawing.Size(26, 25);
-            this.wallTile32.TabIndex = 110;
-            this.wallTile32.TabStop = false;
-            this.wallTile32.Tag = "6;7";
-            // 
-            // wallTile31
-            // 
-            this.wallTile31.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile31.Location = new System.Drawing.Point(1461, 307);
-            this.wallTile31.Name = "wallTile31";
-            this.wallTile31.Size = new System.Drawing.Size(26, 25);
-            this.wallTile31.TabIndex = 109;
-            this.wallTile31.TabStop = false;
-            this.wallTile31.Tag = "3;6";
-            // 
-            // wallTile36
-            // 
-            this.wallTile36.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile36.Location = new System.Drawing.Point(1493, 369);
-            this.wallTile36.Name = "wallTile36";
-            this.wallTile36.Size = new System.Drawing.Size(26, 25);
-            this.wallTile36.TabIndex = 114;
-            this.wallTile36.TabStop = false;
-            this.wallTile36.Tag = "9;7";
-            // 
-            // wallTile35
-            // 
-            this.wallTile35.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile35.Location = new System.Drawing.Point(1493, 338);
-            this.wallTile35.Name = "wallTile35";
-            this.wallTile35.Size = new System.Drawing.Size(26, 25);
-            this.wallTile35.TabIndex = 113;
-            this.wallTile35.TabStop = false;
-            this.wallTile35.Tag = "7;7";
-            // 
-            // wallTile34
-            // 
-            this.wallTile34.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile34.Location = new System.Drawing.Point(1493, 307);
-            this.wallTile34.Name = "wallTile34";
-            this.wallTile34.Size = new System.Drawing.Size(26, 25);
-            this.wallTile34.TabIndex = 112;
-            this.wallTile34.TabStop = false;
-            this.wallTile34.Tag = "4;6";
-            // 
-            // wallTile41
-            // 
-            this.wallTile41.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile41.Location = new System.Drawing.Point(1407, 418);
-            this.wallTile41.Name = "wallTile41";
-            this.wallTile41.Size = new System.Drawing.Size(26, 25);
-            this.wallTile41.TabIndex = 115;
-            this.wallTile41.TabStop = false;
-            this.wallTile41.Tag = "1;7";
-            // 
-            // wallTile42
-            // 
-            this.wallTile42.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile42.Location = new System.Drawing.Point(1439, 418);
-            this.wallTile42.Name = "wallTile42";
-            this.wallTile42.Size = new System.Drawing.Size(26, 25);
-            this.wallTile42.TabIndex = 116;
-            this.wallTile42.TabStop = false;
-            this.wallTile42.Tag = "2;7";
-            // 
-            // wallTile43
-            // 
-            this.wallTile43.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile43.Location = new System.Drawing.Point(1471, 418);
-            this.wallTile43.Name = "wallTile43";
-            this.wallTile43.Size = new System.Drawing.Size(26, 25);
-            this.wallTile43.TabIndex = 117;
-            this.wallTile43.TabStop = false;
-            this.wallTile43.Tag = "3;7";
-            // 
-            // wallTile44
-            // 
-            this.wallTile44.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile44.Location = new System.Drawing.Point(1503, 418);
-            this.wallTile44.Name = "wallTile44";
-            this.wallTile44.Size = new System.Drawing.Size(26, 25);
-            this.wallTile44.TabIndex = 118;
-            this.wallTile44.TabStop = false;
-            this.wallTile44.Tag = "4;7";
-            // 
-            // wallTile45
-            // 
-            this.wallTile45.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wallTile45.Location = new System.Drawing.Point(1536, 418);
-            this.wallTile45.Name = "wallTile45";
-            this.wallTile45.Size = new System.Drawing.Size(26, 25);
-            this.wallTile45.TabIndex = 119;
-            this.wallTile45.TabStop = false;
-            this.wallTile45.Tag = "5;7";
             // 
             // button2
             // 
@@ -1426,7 +928,7 @@
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(1183, 460);
+            this.label16.Location = new System.Drawing.Point(1167, 262);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(106, 33);
             this.label16.TabIndex = 123;
@@ -1436,7 +938,7 @@
             // autoWallTile
             // 
             this.autoWallTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(12)))), ((int)(((byte)(165)))));
-            this.autoWallTile.Location = new System.Drawing.Point(1282, 462);
+            this.autoWallTile.Location = new System.Drawing.Point(1266, 264);
             this.autoWallTile.Name = "autoWallTile";
             this.autoWallTile.Size = new System.Drawing.Size(26, 25);
             this.autoWallTile.TabIndex = 124;
@@ -1484,7 +986,7 @@
             // 
             // autowallBTN
             // 
-            this.autowallBTN.Location = new System.Drawing.Point(1333, 461);
+            this.autowallBTN.Location = new System.Drawing.Point(1317, 263);
             this.autowallBTN.Name = "autowallBTN";
             this.autowallBTN.Size = new System.Drawing.Size(245, 30);
             this.autowallBTN.TabIndex = 128;
@@ -1497,12 +999,65 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(1325, 494);
+            this.label17.Location = new System.Drawing.Point(1309, 296);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(245, 23);
             this.label17.TabIndex = 129;
             this.label17.Text = "^ Warning: You cannot undo that ^";
             this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // rawKyeBTN
+            // 
+            this.rawKyeBTN.Location = new System.Drawing.Point(1129, 524);
+            this.rawKyeBTN.Name = "rawKyeBTN";
+            this.rawKyeBTN.Size = new System.Drawing.Size(71, 46);
+            this.rawKyeBTN.TabIndex = 130;
+            this.rawKyeBTN.Text = "Load Raw";
+            this.rawKyeBTN.UseVisualStyleBackColor = true;
+            this.rawKyeBTN.Click += new System.EventHandler(this.rawKyeBTN_Click);
+            // 
+            // blendingCheckbox
+            // 
+            this.blendingCheckbox.AutoSize = true;
+            this.blendingCheckbox.Location = new System.Drawing.Point(1172, 295);
+            this.blendingCheckbox.Name = "blendingCheckbox";
+            this.blendingCheckbox.Size = new System.Drawing.Size(130, 21);
+            this.blendingCheckbox.TabIndex = 131;
+            this.blendingCheckbox.Text = "Object Blending";
+            this.blendingCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1160, 318);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 28);
+            this.label7.TabIndex = 132;
+            this.label7.Text = "Manual Walls:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // manualLabel
+            // 
+            this.manualLabel.AutoSize = true;
+            this.manualLabel.BackColor = System.Drawing.Color.Transparent;
+            this.manualLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manualLabel.ForeColor = System.Drawing.Color.Black;
+            this.manualLabel.Location = new System.Drawing.Point(1507, 68);
+            this.manualLabel.Name = "manualLabel";
+            this.manualLabel.Size = new System.Drawing.Size(72, 17);
+            this.manualLabel.TabIndex = 133;
+            this.manualLabel.Text = "(manual)";
+            this.manualLabel.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1135, 573);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 17);
+            this.label18.TabIndex = 134;
+            this.label18.Text = "(buggy?)";
             // 
             // Form1
             // 
@@ -1510,6 +1065,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1590, 590);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.manualLabel);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.blendingCheckbox);
+            this.Controls.Add(this.rawKyeBTN);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.autowallBTN);
             this.Controls.Add(this.checkBox2);
@@ -1521,48 +1081,8 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.wallTile45);
-            this.Controls.Add(this.wallTile44);
-            this.Controls.Add(this.wallTile43);
-            this.Controls.Add(this.wallTile42);
-            this.Controls.Add(this.wallTile41);
-            this.Controls.Add(this.wallTile36);
-            this.Controls.Add(this.wallTile35);
-            this.Controls.Add(this.wallTile34);
-            this.Controls.Add(this.wallTile33);
-            this.Controls.Add(this.wallTile32);
-            this.Controls.Add(this.wallTile31);
-            this.Controls.Add(this.wallTile29);
-            this.Controls.Add(this.wallTile30);
-            this.Controls.Add(this.wallTile28);
-            this.Controls.Add(this.wallTile27);
-            this.Controls.Add(this.wallTile26);
-            this.Controls.Add(this.wallTile25);
-            this.Controls.Add(this.wallTile24);
-            this.Controls.Add(this.wallTile22);
-            this.Controls.Add(this.wallTile23);
-            this.Controls.Add(this.wallTile21);
-            this.Controls.Add(this.wallTile20);
-            this.Controls.Add(this.wallTile18);
-            this.Controls.Add(this.wallTile19);
-            this.Controls.Add(this.wallTile17);
-            this.Controls.Add(this.wallTile16);
-            this.Controls.Add(this.wallTile15);
-            this.Controls.Add(this.wallTile14);
-            this.Controls.Add(this.wallTile13);
-            this.Controls.Add(this.wallTile12);
-            this.Controls.Add(this.wallTile11);
-            this.Controls.Add(this.wallTile10);
-            this.Controls.Add(this.wallTile9);
-            this.Controls.Add(this.wallTile8);
-            this.Controls.Add(this.wallTile7);
-            this.Controls.Add(this.wallTile6);
-            this.Controls.Add(this.wallTile5);
-            this.Controls.Add(this.wallTile4);
-            this.Controls.Add(this.wallTile3);
-            this.Controls.Add(this.wallTile2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loadLevelBTN);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -1581,8 +1101,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.aSelected);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.wallTile1);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.rotatecount);
             this.Controls.Add(this.rotateclock);
             this.Controls.Add(this.magnetew);
@@ -1638,7 +1156,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Amazing Kye Editor v1.03";
+            this.Text = "Amazing Kye Editor v1.04";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kye1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diamond1)).EndInit();
@@ -1681,52 +1199,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.magnetew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magnetns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destroyer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.levelBorder1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aSelected)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile35)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile41)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile43)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallTile45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoWallTile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1782,8 +1259,6 @@
         private System.Windows.Forms.PictureBox magnetew;
         private System.Windows.Forms.PictureBox magnetns;
         private System.Windows.Forms.PictureBox destroyer;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox wallTile1;
         private System.Windows.Forms.PictureBox levelBorder1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -1806,49 +1281,9 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loadLevelBTN;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.PictureBox wallTile2;
-        private System.Windows.Forms.PictureBox wallTile3;
-        private System.Windows.Forms.PictureBox wallTile6;
-        private System.Windows.Forms.PictureBox wallTile5;
-        private System.Windows.Forms.PictureBox wallTile4;
-        private System.Windows.Forms.PictureBox wallTile9;
-        private System.Windows.Forms.PictureBox wallTile8;
-        private System.Windows.Forms.PictureBox wallTile7;
-        private System.Windows.Forms.PictureBox wallTile10;
-        private System.Windows.Forms.PictureBox wallTile11;
-        private System.Windows.Forms.PictureBox wallTile12;
-        private System.Windows.Forms.PictureBox wallTile13;
-        private System.Windows.Forms.PictureBox wallTile14;
-        private System.Windows.Forms.PictureBox wallTile15;
-        private System.Windows.Forms.PictureBox wallTile16;
-        private System.Windows.Forms.PictureBox wallTile17;
-        private System.Windows.Forms.PictureBox wallTile19;
-        private System.Windows.Forms.PictureBox wallTile18;
-        private System.Windows.Forms.PictureBox wallTile20;
-        private System.Windows.Forms.PictureBox wallTile24;
-        private System.Windows.Forms.PictureBox wallTile22;
-        private System.Windows.Forms.PictureBox wallTile23;
-        private System.Windows.Forms.PictureBox wallTile21;
-        private System.Windows.Forms.PictureBox wallTile25;
-        private System.Windows.Forms.PictureBox wallTile26;
-        private System.Windows.Forms.PictureBox wallTile27;
-        private System.Windows.Forms.PictureBox wallTile29;
-        private System.Windows.Forms.PictureBox wallTile30;
-        private System.Windows.Forms.PictureBox wallTile28;
-        private System.Windows.Forms.PictureBox wallTile33;
-        private System.Windows.Forms.PictureBox wallTile32;
-        private System.Windows.Forms.PictureBox wallTile31;
-        private System.Windows.Forms.PictureBox wallTile36;
-        private System.Windows.Forms.PictureBox wallTile35;
-        private System.Windows.Forms.PictureBox wallTile34;
-        private System.Windows.Forms.PictureBox wallTile41;
-        private System.Windows.Forms.PictureBox wallTile42;
-        private System.Windows.Forms.PictureBox wallTile43;
-        private System.Windows.Forms.PictureBox wallTile44;
-        private System.Windows.Forms.PictureBox wallTile45;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label8;
@@ -1861,6 +1296,11 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button autowallBTN;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button rawKyeBTN;
+        private System.Windows.Forms.CheckBox blendingCheckbox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label manualLabel;
+        private System.Windows.Forms.Label label18;
 
     }
 }

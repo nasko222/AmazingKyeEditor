@@ -5,3 +5,4 @@ C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKye
 C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.csproj.GenerateResource.Cache
 C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.exe
 C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.pdb
+C:\Users\Nasko\Documents\Visual Studio 2010\Projects\AmazingKyeEditor\AmazingKyeEditor\obj\x86\Release\AmazingKyeEditor.Form2.resources
